@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,ol {
+				list-style: none;
+			}
+			img {
+				display: block;
+			}
+			.banner {
+				height: 450px;
+				background: rgb(253,107,178);
+			}
+			.container {
+				width: 1200px;
+				height: 450px;
+				margin: 20px auto;
+				/*background: #ccc;*/
+				position: relative;
+			}
+			.container:before {
+				content: '';
+				width: 300px;
+				height: 450px;
+				background: url(img/bg1.png) no-repeat center;
+				position: absolute;
+				left:-300px;
+			}
+			.container:after {
+				content: '';
+				width: 300px;
+				height: 450px;
+				background: url(img/bg2.png) no-repeat center;
+				position: absolute;
+				right:-300px;
+			}
+			.menu {
+				width: 200px;
+				height: 450px;
+				background: #008000;
+				float: left;
+			}
+			.slide {
+				float: left;
+				width: 750px;
+				height: 450px;
+				overflow: hidden;
+				position: relative;
+				z-index: 100;
+			}
+			.wbox {
+				width: 250px;
+				height: 450px;
+				background: #00A0E9;
+				float: left;
+			}
+			.line {
+				position: absolute;
+				left: 50%;
+				margin-left: -120px;
+				bottom: 20px;
+				font-size: 0;
+			}
+			.line span {
+				display: inline-block;
+				width: 20px;
+				height: 10px;
+				background: #ccc;
+				margin-right: 10px;
+			}
+			.line span.on {
+				background: #FF0000;
+			}
+			.btn {
+				position: absolute;
+				top: 50%;
+				right: 0;
+			}
+			.btn a {
+				display: inline-block;
+				width: 40px;
+				height: 80px;
+				text-decoration: none;
+				font-size: 50px;
+				line-height: 80px;
+				text-align: center;
+				color: #fff;
+				background: rgba(0,0,0,0.5);
+				margin-top:-40px ;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="banner">
+			
+			<div class="container">
+				<div class="menu">
+					<!--<ul>
+						<li><a href="">列表1</a></li>
+						<li><a href="">列表2</a></li>
+						<li><a href="">列表3</a></li>
+						<li><a href="">列表4</a></li>
+						<li><a href="">列表5</a></li>
+						<li><a href="">列表6</a></li>
+						<li><a href="">列表7</a></li>
+						<li><a href="">列表8</a></li>
+						<li><a href="">列表9</a></li>
+						<li><a href="">列表10</a></li>
+					</ul>-->
+				</div>
+				<!--轮播-->
+				<div class="slide">
+					<ul class="imgbox">
+						<li><a href=""><img src="img/banner1.jpg" alt="" /></a></li>
+						<li><a href=""><img src="img/banner2.jpg" alt="" /></a></li>
+						<li><a href=""><img src="img/banner3.jpg" alt="" /></a></li>
+						<li><a href=""><img src="img/banner4.jpg" alt="" /></a></li>
+						<li><a href=""><img src="img/banner5.jpg" alt="" /></a></li>
+						<li><a href=""><img src="img/banner6.jpg" alt="" /></a></li>
+						<li><a href=""><img src="img/banner7.jpg" alt="" /></a></li>
+						<li><a href=""><img src="img/banner8.jpg" alt="" /></a></li>
+					</ul>
+					<div class="line">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="btn">
+						<a href="">&lt;</a>
+						<a href="">&gt;</a>
+					</div>
+				</div>
+				
+				<div class="wbox"></div>
+			</div>
+			
+		</div>
+		
+		<script type="text/javascript">
+			$(function(){
+				var arrColor = ['rgb(253,107,178)','rgb(172,237,255)','rgb(25,28,81)','rgb(59,0,154)',
+								'rgb(255,187,2)','rgb(25,28,81)','rgb(59,0,154)','rgb(203,18,36)'];
+				$('.line>span').mousemove(function(){
+					var num = $(this).index();
+					$('.line>span').eq(num).addClass('on').siblings().removeClass();
+					$('.banner').css('background',arrColor[num]);
+					$('.imgbox li').eq(num).show().siblings().hide()
+				});
+			});
+		</script>
+	</body>
+</html>

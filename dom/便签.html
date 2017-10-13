@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: #E3DFD4;
+			}
+			
+			#text {
+				margin: 50px;
+				width: 200px;
+				height: 200px;
+				border: 3px solid white;
+				background: #DF2F9E;
+				box-shadow: -7px 10px rgba(0, 0, 0, 0.3);
+				-webkit-border-bottom-left-radius: 20px 500px;
+				-webkit-border-bottom-right-radius: 500px 30px;
+				-webkit-border-top-right-radius: 5px 100px;
+				background-image: -webkit-linear-gradient(top, #FF4FBF, #C61684);
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="button" name="" id="but" value="+" />
+		<div id="box">
+			<div id="text">
+				<p id="logInfo"></p>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		var obut=document.getElementById('but');
+		var otet=document.getElementById('text');
+		var obox=document.getElementById('box');
+		var divT = document.getElementById("logInfo");
+			 obut.onclick = function(){
+			 	obox.appendChild(otet); 
+        };
+			function getCurDate() {
+				var d = new Date();
+				var week;
+				switch(d.getDay()) {
+					case 1:
+						week = "星期一";
+						break;
+					case 2:
+						week = "星期二";
+						break;
+					case 3:
+						week = "星期三";
+						break;
+					case 4:
+						week = "星期四";
+						break;
+					case 5:
+						week = "星期五";
+						break;
+					case 6:
+						week = "星期六";
+						break;
+					default:
+						week = "星期天";
+				}
+				var years = d.getFullYear();
+				var month = add_zero(d.getMonth() + 1);
+				var days = add_zero(d.getDate());
+				var hours = add_zero(d.getHours());
+				var minutes = add_zero(d.getMinutes());
+				var seconds = add_zero(d.getSeconds());
+				var ndate = years + "/" + month + "/" + days + "/" + hours + ":" + minutes + ":" + seconds + " " + week;
+
+				divT.innerHTML = ndate;
+			}
+
+			function add_zero(temp) {
+				if(temp < 10) return "0" + temp;
+				else return temp;
+			}
+			getCurDate()
+		</script>
+	</body>
+
+</html>

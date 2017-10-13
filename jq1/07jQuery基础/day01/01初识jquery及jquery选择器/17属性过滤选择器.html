@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+	.left {
+        width: auto;
+        height: 120px;
+    }
+    
+    .left div {
+        width: 100px;
+        height: 70px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        background: #bbffaa;
+        border: 1px solid #ccc;
+    }
+    
+    .bottom {
+        width: 800px;
+    }
+    
+    .bottom div,
+    .bottom span {
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 5px;
+        background: #bbffaa;
+        float: left;
+        font-size: 14px;
+    }
+    
+    .bottom .small {
+        width: 60px;
+        height: 25px;
+        font-size: 12px;
+        background: #fab;
+    }
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*属性过滤选择器：
+		 * $("[attribute='value']") 选择指定属性值等于给定字符串或以该文字串为前缀（该字符串后跟一个连字符“-”）的元素
+		 * $("[attribute*='value']")选择指定属性具有包含一个给定的子字符串的元素（选择给定的属性是以包含某些值的元素）
+		 * $("[attribute~='value']")选择指定属性用空格分隔的值包含一个给定值的元素
+		 * $("[attribute='value']")选择指定属性是给定值的元素
+		 * $("[attribute!='value']")选择不存在指定属性，或者指定的属性值不等于给定值的元素
+		 * $("[attribute^='value']")选择指定属性是以给定字符串开始的元素
+		 * $("[attribute$='value']")选择指定属性是以给定值结尾的元素，这个比较是区分大小写的
+		 * $("[attribute]")选择所有具有指定属性的元素，该属性可以是任何值
+		 * $("[attributeFilter1][attributeFilterN]")选择匹配所有指定的属性筛选器的元素
+		 */
+	</script>
+</head>
+<body>
+	<h2>属性筛选选择器</h2>
+    <h3>[att=val]、[att]、[att|=val]、[att~=val]</h3>
+    <div class="left" testattr="true" >
+        <div class="div" testattr="true" name='p1'>
+            <a>[att=val]</a>
+        </div>
+        <div class="div" testattr="true" p2>
+            <a>[att]</a>
+        </div>
+        <div class="div" testattr="true" name="-">
+            <a>[att|=val]</a>
+        </div>
+        <div class="div" testattr="true" name="a b">
+            <a>[att~=val]</a>
+        </div>
+    </div>
+    
+    <h3>[att^=val]、[att*=val]、[att$=val]、[att!=val]</h3>
+    <div class="left" testattr="true" >
+        <div class="div" testattr="true"  name='jack-aaorn'>
+            <a>[att^=val]</a>
+        </div>
+        <div class="div" testattr="true"  name='aaorn-jack'>
+            <a>[att$=val]</a>
+        </div>
+        <div class="div" testattr="true"  name="attr-test-selector">
+            <a>[att*=val]</a>
+        </div>
+        <div class="div" name="a b">
+            <a>[att!=val]</a>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//查找所有div中，属性name=p1的div元素
+        //$("div[name=p1]").css("border", "3px groove red"); 
+         
+        //查找所有div中，有属性p2的div元素
+        $('div[p2]').css("border", "3px groove blue"); 
+        
+        //查找所有div中，有属性name中的值只包含一个连字符“-”的div元素
+        $('div[name ="-"]').css("border", "3px dashed red"); 
+        
+        //查找所有div中，有属性name中的值包含一个连字符“空”和“a”的div元素
+       	//$('div[name~="a"]').css("border", "3px groove #668B8B"); 
+       	
+       	//查找所有div中，属性name的值是用jack开头的
+        //$('div[name^=jack]').css("border", "3px groove red"); 
+         
+        //查找所有div中，属性name的值是用jack结尾的
+        //$('div[name$=jack]').css("border", "3px groove blue"); 
+         
+        //查找所有div中，有属性name中的值包含一个test字符串的div元素
+        //$('div[name*="test"]').css("border", "3px groove #00FF00"); 
+        
+        //查找所有div中，有属性testattr中的值没有包含"true"的div
+        //$('div[testattr!="true"]').css("border", "3px groove #668B8B"); 
+	});
+</script>
+</html>

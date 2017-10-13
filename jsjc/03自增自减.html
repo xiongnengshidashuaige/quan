@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>i++</button>
+		<button>i--</button>
+		<button>++i</button>
+		<button>--i</button>
+		<script type="text/javascript">
+			var aBtn = document.querySelectorAll('button');
+			var i1=1;
+			aBtn[0].onclick = function(){
+				console.log(20+i1++);// 1+20 
+				console.log(20+i1++);//2+20
+			}
+			
+			var i3=1;
+			aBtn[2].onclick = function(){
+				console.log(++i3+20);//1+1 +20 22
+				console.log(++i3+20);
+			}
+			
+			
+			
+			var i2=10;
+			aBtn[1].onclick = function(){
+				console.log('减之前:'+i2);
+				console.log(20+i2--);
+				console.log(20+i2--);
+			}
+			
+		</script>
+	</body>
+</html>
+<!--
+	++i 先加 在算
+	i++ 
+	
+	
+-->

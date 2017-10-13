@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+/*this，表示当前的上下文对象是一个html对象，可以调用html对象所拥有的属性和方法。
+$(this),代表的上下文对象是一个jquery的上下文对象，可以调用jQuery的方法和属性值。*/
+	window.onload=function(){
+		 var p1 = document.getElementById('test1')
+        p1.addEventListener('click',function(){
+            //直接通过dom的方法改变颜色
+            this.style.color = "red"; 
+        },false);
+	}
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+    	$('#test2').click(function(){
+            //通过包装成jQuery对象改变颜色
+            $(this).css('color','blue');
+       });
+    });
+    </script>
+</head>
+<body>
+	<h2>特殊选择器this</h2>
+
+    <p id="test1">点击测试：通过原生DOM处理</p>
+    
+    <p id="test2">点击测试：通过原生jQuery处理</p>
+	
+</body>
+</html>

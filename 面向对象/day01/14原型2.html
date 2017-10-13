@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//原型：prototype 要写在构造函数的下面   
+			//求数组的和
+			var arr1 = [1,2,6,4,5];//15
+			var arr2 = [5,6,9,8,7,5];
+			Array.prototype.sum =  function(){
+				var result = 0;
+				for(var i=0;i<this.length;i++){
+					result += this[i];
+				}
+				return result;
+			}
+			
+			
+			//alert(arr1.sum());
+			//alert(arr2.sum());
+			
+			
+			//求 数组的第一个+数组最后一个的 和
+			/*思路:
+				先取出数组的第一个 和 最后一个
+				再相加*/
+			Array.prototype.he = function(){
+				var result = this[0]+this[this.length-1];
+				return result;
+			}
+			//alert(arr1.he());
+			//alert(arr2.he());
+			
+			//求 数组中的最大值
+			//	利用数组排序 取最后一个
+			Array.prototype.max = function(){
+				var result = 0;
+				var arr =this.sort();
+				console.log(arr);
+				result = arr[arr.length-1];
+				return result;
+			}
+			alert(arr1.max());
+			//求 数组中的最小值
+			//	利用数组排序 取第一个
+			Array.prototype.min = function(){
+				 return (this.sort())[0];
+			}
+			alert(arr1.min());
+			
+		</script>
+	</body>
+</html>

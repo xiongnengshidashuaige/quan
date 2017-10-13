@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../lib/jquery-1.12.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("select").change(function(){
+					var str=$(this).val()
+					$('p').find('span').html(str);
+					//alert($(this).val());
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<select name="slect">
+			<option value="a">上海</option>
+			<option value="b">重庆</option>
+			<option value="c">北京</option>
+		</select>
+		<p>select的值是：<span></span></p>
+	</body>
+</html>

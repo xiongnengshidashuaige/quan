@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+	.left,
+    .right {
+        width: 300px;
+        height: 120px;
+    }
+    
+    .left div,
+    .right div {
+        width: 100px;
+        height: 90px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        border: 1px solid #ccc;
+    }
+        
+    .newClass{
+        background: #bbffaa;
+    }
+
+    .jackClass{
+        background: red;
+    }
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+/*
+.addClass( className )方法
+
+.addClass( className ) : 为每个匹配元素所要增加的一个或多个样式名
+.addClass( function(index, currentClass) ) : 这个函数返回一个或更多用空格隔开的要增加的样式名
+注意事项：
+
+.addClass()方法不会替换一个样式类名。它只是简单的添加一个样式类名到元素上
+ * */
+	</script>
+</head>
+<body>
+	<h2>.addClss()方法</h2>
+    <div class="left">
+        <div class="aaron">
+            <p>newClass</p>
+        </div>
+        <div class="aaron">
+            <p>newClass</p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="aa bb jack">
+            <article>
+                <p>jackClass</p>
+            </article>
+        </div>
+        <div class="bb cc jack ">
+            <article>
+                <p>jackClass</p>
+            </article>
+        </div>
+    </div>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+	        //class=left下div元素增加一个新的样式，增加背景颜色
+	        $('.left div').addClass('newClass')
+	    
+	        //通过className(fucntion)方法
+	        //这个函数返回一个或更多用空格隔开的要增加的样式名。
+	        //接收index 参数表示元素在匹配集合中的索引位置和html 参数表示元素上原来的 HTML 内容
+	
+	        //找到所有的div，然后通过addClass设置颜色，根据返回的className的判断，
+	        $("div").addClass(function(index,className) {
+	
+	            //找到类名中包含了imooc的元素
+	            if(-1 !== className.indexOf('jack')){
+	                //this指向匹配元素集合中的当前元素
+	                $(this).addClass('jackClass')
+	            }
+	        });
+   
+    	});
+    </script>
+</body>
+</html>

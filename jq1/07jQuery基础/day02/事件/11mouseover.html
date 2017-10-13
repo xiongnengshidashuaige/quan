@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 500px;
+				height: 500px;
+				background: #FFA500;
+				margin: 100px;
+			}
+		</style>
+		<script src="../../lib/jquery-1.12.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("button").mouseover(function(){
+					$("div").hide(3000);
+				});
+				
+				$("button").mouseout(function(){
+					$("div").show(3000);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button>show/hide</button>
+		<div>div</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.m = 100;
+			function fn1(){
+				alert(this.m);
+			}
+			//fn1();
+			//上面的代码等价于:
+			var window = new Object();
+			window.m = 100;
+			window.fn1 = function(){
+				var n = {}
+				n.name = 'aabc';
+				n.fn = function(){
+//					return function(){
+//						alert(this);
+//					}
+				}
+				
+				return function(){
+					console.log('aa:'+n);
+				}
+				
+			}
+			//window.fn1();
+			var nn = window.fn1();
+			console.log(nn());
+			//n.fn();
+			//n();
+		</script>
+	</body>
+</html>

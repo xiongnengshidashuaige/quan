@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+	 .left,
+    .right {
+        width: 300px;
+        height: 120px;
+    }
+    
+    .left div,
+    .right div {
+        width: 100px;
+        height: 90px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        border: 1px solid #ccc;
+    }
+        
+    .newClass{
+        background: #bbffaa;
+    }
+
+    .jackClass{
+        background: red;
+    }
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+/*
+.removeClass( )方法
+
+.removeClass( [className ] )：每个匹配元素移除的一个或多个用空格隔开的样式名
+.removeClass( function(index, class) ) ： 一个函数，返回一个或多个将要被移除的样式名
+注意事项
+
+如果一个样式类名作为一个参数,只有这样式类会被从匹配的元素集合中删除 。 如果没有样式名作为参数，那么所有的样式类将被移除
+ * */
+	</script>
+</head>
+<body>
+	<h2>.removeClass()方法</h2>
+    <div class="left">
+        <div class="aaron newClass">
+            <p>newClass</p>
+        </div>
+        <div class="aaron newClass">
+            <p>newClass</p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="aa bb jackClass">
+            <article>
+                <p>jackClass</p>
+            </article>
+        </div>
+        <div>
+            <article>
+                <p>jackClass</p>
+            </article>
+        </div>
+    </div>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+	        //class=left下div元素删除newClass样式
+	        $('.left div').removeClass('newClass')
+	        
+	        //.removeClass() 方法允许我们指定一个函数作为参数，返回将要被删除的样式
+	        $('.right > div:first').removeClass(function(index,className){
+	            
+	            //className = aa bb jackClass
+	            //把div的className赋给下一个兄弟元素div上作为它的class
+	            $(this).next().addClass(className)
+	
+	            //删除自己本身的jackClass
+	            return 'jackClass'
+	        })
+    	});
+    </script>
+</body>
+</html>

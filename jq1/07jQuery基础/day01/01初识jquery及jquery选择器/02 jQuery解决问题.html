@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>jQuery解决问题</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            height: 200px;
+            background: pink;
+            margin-bottom: 10px;
+            display: none;
+        }
+    </style>
+ <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        // 1. 入口函数的方式
+        $(document).ready(function () {
+
+            $("#demo").click(function () {
+                $("div").show(1000).html("我是内容");
+            });
+        });
+
+        // 2.简写方式
+//      $(function () {
+//
+//      });
+
+        /*$(document).ready(function () {
+
+            alert("我是第二个onload");
+        });*/
+       /*
+        window.onload 与 $(document).ready()的对比
+        window.onload必须等待网页中所有的内容加载完毕后（包括图片）才能执行   不能同时编写多个   无简写
+        $(document).ready()网页中所有DOM结构绘制完毕后就执行，可能DOM元素关联的东西并没有加载完   能同时编写多个   简写$(function(){……});
+        * */
+    </script>
+   
+</head>
+<body>
+	<input type="button" value="我是按钮" id="demo"/>
+	<div></div>
+	<div></div>
+	<div></div>
+
+</body>
+</html>

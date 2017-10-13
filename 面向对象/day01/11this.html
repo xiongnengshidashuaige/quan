@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			this.m = 10;
+			var obj = {
+				m : 100,
+				test:function(){
+					alert('1:'+this.m);
+					return function(){
+						console.log(this);
+						alert('2:'+this.m);
+					}
+				}
+			}
+			obj.test();//100
+			obj.test()();//100 10
+		</script>
+	</body>
+</html>

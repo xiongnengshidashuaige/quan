@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>获取03class.xml中的内容</button>
+		<hr />
+		<ul>
+			
+		</ul>
+		
+		<script type="text/javascript">
+			var oBtn = document.querySelector('button');
+			oBtn.onclick = function(){
+				//创建对象
+				var xhr;
+				var xmlDOM = null;
+				if(window.XMLHttpRequest){
+					xhr = new XMLHttpRequest();
+				}else{
+					xhr = new ActiveXObject('Microsoft.XMLHTTP');
+				}
+				
+				//创建http请求
+				xhr.open('get','03class.xml',true);
+				
+				//发送请求
+				xhr.send();
+				
+				//接收响应
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState == 4 && xhr.status ==200){
+						xmlDOM = xhr.responseXML;
+						
+						var s = xmlDOM.getElementsByTagName('student');
+						var str = '';
+						var oUl = document.querySelector('ul');
+						for(var i=0;i<s.length;i++){
+							var id = s[i].getElementsByTagName("id")[0].childNodes[0].nodeValue;
+							var name =  s[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+							var age =  s[i].getElementsByTagName("age")[0].childNodes[0].nodeValue;
+							var sex =  s[i].getElementsByTagName("sex")[0].childNodes[0].nodeValue;
+							var hobby =  s[i].getElementsByTagName("hobby")[0].childNodes[0].nodeValue;
+							
+							str += '<li>'+id+name+age+sex+hobby+'</li>';
+							console.log(str);
+						}
+						oUl.innerHTML = str;
+					}
+				}
+				
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

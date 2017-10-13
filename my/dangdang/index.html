@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="dangdang.css" />
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="imgbox">
+				<a href="" style="display: block;"><img src="img/b1.jpg" alt="" /></a>
+				<a href=""><img src="img/b2.jpg" alt="" /></a>
+				<a href=""><img src="img/b3.jpg" alt="" /></a>
+				<a href=""><img src="img/b4.jpg" alt="" /></a>
+				<a href=""><img src="img/b5.jpg" alt="" /></a>
+				<a href=""><img src="img/b6.jpg" alt="" /></a>
+				<a href=""><img src="img/b7.jpg" alt="" /></a>
+				<a href=""><img src="img/b8.jpg" alt="" /></a>
+			</div>
+			<div class="numbox">
+				<!--<span style="background: #FF0000;">1</span>
+				<span>2</span>
+				<span>3</span>
+				<span>4</span>
+				<span>5</span>
+				<span>6</span>
+				<span>7</span>
+				<span>8</span>-->
+			</div>
+			<div class="btn">
+				<a href="javascript:;" class="prev">&lt;</a>
+				<a href="javascript:;" class="next">&gt;</a>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		
+			//第一步 获取元素
+			var aImg = document.querySelectorAll('.imgbox>a');
+			
+			
+			var oPrev = document.getElementsByClassName('prev')[0];
+			var oNext = document.getElementsByClassName('next')[0];
+			
+			var oWrap = document.querySelector('.wrap');
+			var oBtn = document.querySelector('.btn');
+			var oNum = document.querySelector('.numbox');
+			var n = 0
+			var timer = null;
+			
+			//动态生成span
+			var str = '';
+			for(var i=1;i<=aImg.length;i++){
+				str += '<span>'+i+'</span>';
+			}
+			oNum.innerHTML = str;
+			
+			
+			var aSpan = document.querySelectorAll('span');
+			//setTimeout(autoplay,3000);
+			autoplay();//页面初始 自动播放
+			
+			
+			
+			//添加事件
+			//鼠标移入切换
+			for(var i=0;i<aSpan.length;i++){
+				aSpan[i].index = i;//添加自定义属性
+				aSpan[i].onmouseover = function(){
+					n = this.index;
+					init();
+				}
+			}
+			
+			//点击切换
+			//上一个
+			oPrev.onclick = function(){
+				n--;
+				if( n < 0){
+					n = aSpan.length-1;
+				}
+				init();
+			}
+			
+			//下一个
+			oNext.onclick = function(){
+				prev();
+			}
+			
+			//移入
+			oWrap.onmouseover = function(){
+				oBtn.style.display= 'block';
+				clearInterval(timer);//清除定时器
+			}
+			//移出
+			oWrap.onmouseout = function(){
+				oBtn.style.display= 'none';
+				autoplay();//开启自动播放
+			}
+			
+			//封装的初始化函数
+			function init(){
+				for(var j=0;j<aSpan.length;j++){
+					aImg[j].style.display = 'none';
+					aSpan[j].style.background = '#ccc';
+				}
+				aImg[n].style.display = 'block';
+				aSpan[n].style.background = '#FF0000';
+			}
+			
+			//定时器
+			function autoplay(){
+				timer = setInterval(prev,1000);
+			}
+			
+			//下一个 封装函数
+			function prev(){
+				n++;
+				if( n > aSpan.length-1 ){
+					n = 0;
+				}
+				init();
+			}
+		
+		</script>
+	</body>
+</html>

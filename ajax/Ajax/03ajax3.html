@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>获取03class.xml中的内容</button>
+		<hr />
+		
+		
+		<script type="text/javascript">
+			var oBtn = document.querySelector('button');
+			oBtn.onclick = function(){
+				//创建对象
+				var xhr;
+				var xmlDOM = null;
+				if(window.XMLHttpRequest){
+					xhr = new XMLHttpRequest();
+				}else{
+					xhr = new ActiveXObject('Microsoft.XMLHTTP');
+				}
+				
+				//创建http请求
+				xhr.open('get','03class.xml',true);
+				
+				//发送请求
+				xhr.send();
+				
+				//接收响应
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState == 4 && xhr.status ==200){
+						return xmlDOM = xhr.responseXML;
+					}
+				}
+				setTimeout(function(){
+					console.log(xmlDOM);
+				},2000);
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

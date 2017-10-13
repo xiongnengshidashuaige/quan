@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+	div {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        float: left;
+        font-size: 0.8em;
+        background: #40E0D0
+    }
+    .first{
+		background-color:lightSkyBlue;
+	}
+	.second{
+		background-color: #ccc;
+		color: red;
+		font-size: 1.2em;
+	}
+	.third{
+		background-color:yellow;
+	}
+	.sixth{
+		font-size: 12px;
+	}
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+/*
+ .css() 方法：获取元素样式属性的计算值或者设置元素的CSS属性
+
+获取：
+
+.css( propertyName ) ：获取匹配元素集合中的第一个元素的样式属性的计算值
+.css( propertyNames )：传递一组数组，返回一个对象结果
+设置：
+
+ .css(propertyName, value )：设置CSS
+.css( propertyName, function )：可以传入一个回调函数，返回取到对应的值进行处理
+.css( properties )：可以传一个对象，同时设置多个样式
+注意事项：
+
+浏览器属性获取方式不同，在获取某些值的时候都jQuery采用统一的处理，比如颜色采用RBG，尺寸采用px
+.css()方法支持驼峰写法与大小写混搭的写法，内部做了容错的处理
+当一个数只被作为值（value）的时候， jQuery会将其转换为一个字符串，并添在字符串的结尾处添加px，例如 .css("width",50}) 与 .css("width","50px"})一样
+ * */
+	</script>
+</head>
+<body>
+	<h3>获取css属性</h3>
+    <div class="first">获取颜色</div>
+    <p></p>
+    <div class="second">获取文字尺寸</div>
+    <p></p>
+    <div class="third">获取宽高尺寸</div>
+	<p></p>
+
+	</br></br></br>
+	<h3>设置css属性</h3>
+	<div class="fourth">设置颜色设置文字尺寸</div>
+    <div class="fifth">设置颜色设置文字尺寸</div>
+    <div class="sixth">通过回调设置新的值</div>
+    <div class="seventh">同时设置多少个样式</div>
+    
+    <script type="text/javascript">
+    	$(document).ready(function(){
+			//background-color:blue; => rgb(0, 0, 255)
+			//颜色都会转化成统一的rgb标示
+			$('p:eq(0)').text( $('.first').css("background-color") )
+			
+			//字体大小都会转化成统px大小 em=>px
+			$('p:eq(1)').text( $('.first').css("font-size") )
+	  
+			//获取尺寸，传入CSS属性组成的一个数组
+			//{width: "60px", height: "60px"}	
+			var value = $('.first').css(['width','height']);
+			//因为获取的是一个对象，取到对应的值
+			$('p:eq(2)').text( 'widht:' + value.width +  ' height:' +value.height )
+			
+			
+			//多种写法设置颜色
+			$('.fourth').css("background-color","red")
+			$('.fifth').css("backgroundColor","yellow")
+	
+			//多种写法设置字体大小
+			$('.fourth').css("font-size","15px")
+			$('.fifth').css("fontSize","0.9em")
+	  
+			//获取到指定元素的宽度，在回调返回宽度值
+			//通过处理这个value，重新设置新的宽度
+			$('.sixth').css("width",function(index,value){
+	            //value带单位，先分解
+	            value = value.split('px');
+	            //返回一个新的值，在原有的值上，增加50px
+	            return (Number(value[0]) + 50) + value[1];
+	        })
+	   
+			//合并设置,通过对象传设置多个样式
+			$('.seventh').css({
+	            'font-size'        :"15px",
+	            "background-color" :"#40E0D0",
+	            "border"           :"1px solid red"
+	        })
+    
+    	});
+    </script>
+</body>
+</html>

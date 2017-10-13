@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p>我是一个段落</p>
+			
+			<ul id="ul1" class="list" name="mylist" data="111111">
+				
+				<li>00001</li>
+				
+				<li>00002</li>
+				
+				<li>00003</li>
+				
+				<li>00004</li>
+				
+				<li>00005</li>
+				
+				<li>00006</li>
+				
+			</ul>
+			
+		</div>
+		
+		<script type="text/javascript">
+			var oUl = document.getElementById("ul1");
+		
+			//第一个
+			var oFirst = oUl.firstElementChild || oUl.firstChild;
+			oFirst.style.color = "red";
+			
+			//下一个 兄弟节点
+			var oNext = oFirst.nextElementSibling || oFirst.nextSibling;
+			oNext.style.background = "blue";
+		
+			//最后一个
+			var oLast =  oUl.lastElementChild || oUl.lastChild;
+			oLast.style.color = "green";
+			
+			//上一个 兄弟节点
+			var oPrev = oLast.previousElementSibling || oLast.previousSibling;
+			oPrev.style.background = "pink";
+		</script>
+	</body>
+</html>
+<!--
+	
+-->

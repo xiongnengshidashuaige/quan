@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" value="请输入你的银行密码"/>
+		
+		<script type="text/javascript">
+			var oInp = document.querySelector('input');
+			
+			oInp.onfocus = function(){
+				this.value = "";
+			}
+			
+			oInp.onblur = function(){
+				this.value = "888888888";
+			}
+			
+			oInp.onchange = function(){
+				console.log(this.value);
+			}
+		</script>
+		
+	</body>
+</html>

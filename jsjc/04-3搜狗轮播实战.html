@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			ul,ol {
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
+			img{
+				display: block;
+			}
+			.wrap {
+				width: 1200px;
+				height: 410px;
+				margin: 100px auto;
+				position: relative;
+			}
+			
+			.imgbox li {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			
+			.textbox {
+				position: absolute;
+				bottom: 80px;
+				left: 112px;
+				
+			}
+			.textbox p {
+				color: #fff;
+				display: none;
+			}
+			
+			.img-small {
+				width: 976px;
+				position: absolute;
+				bottom: 10px;
+				left: 50%;
+				margin-left: -488px;
+			}
+			.img-small a {
+				width: 112px;
+				height: 64px;
+				float:left;
+				display: block;
+				padding: 2px;
+				margin-right:5px ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="imgbox">
+				<ul>
+					<li><a href=""><img src="img/b1.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/b2.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/b3.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/b4.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/b5.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/b6.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/b7.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/b8.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+			<div class="textbox">
+				<p>记忆大师》黄渤段奕宏飙戏[付费]</p>
+				<p>《我不是潘金莲》范冰冰遭渣男背叛</p>
+				<p>记忆大师》黄渤段奕宏飙戏[付费]</p>
+				<p style="display: block;">《非凡任务》黄轩段奕宏警匪暗战</p>
+				<p>记忆大师》黄渤段奕宏飙戏[付费]</p>
+				<p>记忆大师》黄渤段奕宏飙戏[付费]</p>
+				<p>《少年》欧豪张译身陷白骨谜案</p>
+				<p>《忠爱无言》一人一狗一车看哭了[付费]</p>
+			</div>
+			<div class="img-small">
+				<a href=""><img src="img/b1-1.jpg" alt="" /></a>
+				<a href=""><img src="img/b2-1.jpg" alt="" /></a>
+				<a href=""><img src="img/b3-1.jpg" alt="" /></a>
+				<a href=""><img src="img/b4-1.jpg" alt="" /></a>
+				<a href=""><img src="img/b5-1.jpg" alt="" /></a>
+				<a href=""><img src="img/b6-1.jpg" alt="" /></a>
+				<a href=""><img src="img/b7-1.jpg" alt="" /></a>
+				<a href=""><img src="img/b8-1.jpg" alt="" /></a>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			//第一步 获取元素
+			var aImg = document.querySelectorAll('.imgbox li');
+			var aP = document.querySelectorAll('p');
+			var aBtn = document.querySelectorAll('.img-small img');
+			
+			//第二步 添加事件
+			for(var i=0;i<aImg.length;i++){
+				aBtn[i].index = i;//自定义属性
+				aBtn[i].onmouseover = function (){
+					//console.log(this.index);
+					for(var i=0;i<aImg.length;i++){
+						aImg[i].style.display = 'none';
+						aP[i].style.display = 'none';
+						aBtn[i].style.border = '1px solid transparent';
+					}
+					aImg[this.index].style.display = 'block';
+					aP[this.index].style.display = 'block';
+					this.style.border = '1px solid red'
+				}
+			}
+		</script>
+	</body>
+</html>

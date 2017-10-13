@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var num = 10;
+			function fn1(){
+				console.log(num);
+				var num = 20;
+			}
+			
+			fn1();//num  undefined
+
+			var a = 12;
+			function fn2(){
+				
+				var a = 22;
+				console.log(a);
+				var b = 20;//局部变量 只能在函数体内部使用
+			}
+			
+			
+			
+			//fn2(); //22  不是12
+			//alert(b);// b is not defined
+			
+			var b = 8;
+			function fn3(){
+				console.log(b);
+				b = 88;//变量提升
+			}
+			
+			console.log(b);//8
+			fn3();//8
+			console.log(b);//88
+		</script>
+	</body>
+</html>

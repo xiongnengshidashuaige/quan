@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//var str = '猪八戒';
+			var str1 = new  String('猪八戒');
+			console.log("--------- stringObject.charAt(index) ----------")
+			//stringObject.charAt(index)
+			//index	必需。表示字符串中某个位置的数字，即字符在字符串中的下标。
+			//注释：字符串中第一个字符的下标是 0。
+			//如果参数 index 不在 0 与 string.length 之间，该方法将返回一个空字符串。
+			console.log(str1);//String {0: "猪", 1: "八", 2: "戒", length: 3, [[PrimitiveValue]]: "猪八戒"}
+			console.log(str1.charAt(0));//猪
+			console.log(str1.charAt(1));//八
+			console.log(str1.charAt(2));//戒
+			console.log(str1.charAt(20));//空
+			
+			//
+			var str2 = '从前有只乌龟';
+			console.log(str2.charAt(str2.length-2));//乌
+			console.log(str2.charAt(str2.length-1));//龟
+			
+			
+			//注意 可以采取用下标的方式 直接取相应的子字符串
+			console.log(str2[1])
+			console.log(str2[str2.length-1])
+			
+			console.log("--------- stringObject.charCodeAt(index) ----------")
+			//charCodeAt()	返回在指定的位置的字符的 Unicode 编码。
+			//charCodeAt() 方法可返回指定位置的字符的 Unicode 编码。这个返回值是 0 - 65535 之间的整数。
+			//stringObject.charCodeAt(index)
+			//index	必需。表示字符串中某个位置的数字，即字符在字符串中的下标。
+			//字符串中第一个字符的下标是 0。如果 index 是负数，或大于等于字符串的长度，则 charCodeAt() 返回 NaN。
+			var str3 = "赵钱孙李";
+			console.log(str3.charCodeAt(0));//36213 赵
+			console.log(str3.charCodeAt(1));//38065 钱
+			console.log(str3.charCodeAt(2));//23385 孙
+			console.log(str3.charCodeAt(3));//26446 李
+			
+			console.log(str1.charCodeAt(0));//29482 猪
+			
+			console.log("--------- String.fromCharCode(numX,numX,...,numX) ----------")
+			//String.fromCharCode(numX,numX,...,numX)
+			//fromCharCode() 可接受一个指定的 Unicode 值，然后返回一个字符串。
+			//numX	必需。一个或多个 Unicode 值，即要创建的字符串中的字符的 Unicode 编码。
+			
+			var s1 = String.fromCharCode(29482,12345,54321);
+			console.log(s1);
+		</script>
+	</body>
+</html>
+<!--
+
+	charAt()	返回在指定位置的字符。
+	charCodeAt()	返回在指定的位置的字符的 Unicode 编码。
+	fromCharCode()	从字符编码创建一个字符串。
+	方法 charCodeAt() 与 charAt() 方法执行的操作相似，
+	只不过前者返回的是位于指定位置的字符的编码，而后者返回的是字符子串。
+	
+	
+	concat()	连接字符串。
+
+	indexOf()	检索字符串。
+	lastIndexOf()	从后向前搜索字符串。
+	
+
+	match()	找到一个或多个正则表达式的匹配。
+	replace()	替换与正则表达式匹配的子串。
+	search()	检索与正则表达式相匹配的值。
+	slice()	提取字符串的片断，并在新的字符串中返回被提取的部分。
+	
+	split()	把字符串分割为字符串数组。
+	
+
+	substr()	从起始索引号提取字符串中指定数目的字符。
+	substring()	提取字符串中两个指定的索引号之间的字符。
+	
+
+	toLowerCase()	把字符串转换为小写。
+	toUpperCase()	把字符串转换为大写。
+	
+
+	toString()	返回字符串。
+	valueOf()	返回某个字符串对象的原始值。	
+	
+-->

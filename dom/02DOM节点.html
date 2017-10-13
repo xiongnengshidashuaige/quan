@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="parent">
+			
+			<div class="son">
+				<div class="subson">
+					<p>hello world</p>
+				</div>
+			</div>
+			
+			
+		</div>
+		
+		<script type="text/javascript">
+			var oParent = document.getElementsByClassName('parent')[0];
+			console.log(oParent.nodeName);
+			console.log(oParent.nodeType);
+			console.log(document.querySelector('p').childNodes[0].nodeValue);
+			
+			alert(oParent.childNodes);
+			
+			alert(1111);
+		</script>
+	</body>
+</html>
+<!--
+	DOM由哪三部分组成：DOMCore、 HTMLDOM 、XMLDOM
+		DOMCore:提供了处理HTML文档的api
+		HTMLDOM:提供了处理HTML的api
+		XMLDOM:提供了处理xmlDOM文档的api
+		
+		建议：在处理文档时，尽量使用HTML DOM ，否则才使用DOMCore
+		DOM 将HTML 或XML 文档的任何一个组成部分 看待成一个节点（Node）
+		
+	节点：Node
+	
+	节点类型:
+	重要：
+		1	ELEMENT_NODE  		元素节点
+		2	ATTRIBUTE_NODE		属性节点
+		3	TEXT_NODE			文本节点
+		8	COMMENT_NODE		注释节点
+		9	DOCUMENT_NODE		文档节点
+	---------------------------------------------
+	全部：
+		1	ELEMENT_NODE  		元素节点
+		2	ATTRIBUTE_NODE		属性节点
+		3	TEXT_NODE			文本节点
+		4	CDATA_SECTION_NODE
+		5	ENTITY_REFERENCE_NODE
+		6	ENTITY_NODE
+		7	PROCESSING_INSTRUCTION_NODE
+		8	COMMENT_NODE		注释节点
+		9	DOCUMENT_NODE		文档节点
+		10	DOCUMENT_TYPE_NODE
+		11	DOCUMENT_FRAGMENT_NODE
+		12	NOTATION_NODE
+	
+	
+		
+	element.nodeName	返回元素的名称。
+	element.nodeType	返回元素的节点类型。
+	element.nodeValue	设置或返回元素值。
+	
+-->

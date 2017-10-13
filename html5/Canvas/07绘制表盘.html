@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#c {
+				/*margin: 100px;*/
+				background: #ccc;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<canvas id="c" ></canvas>
+		
+		<script type="text/javascript">
+			var c = document.getElementById("c");
+			if(c.getContext){
+				var ctx = c.getContext('2d');
+			}
+			c.width = 1000;
+			c.height = 1000;
+			
+			
+			//绘制表盘
+			ctx.strokeStyle = "red";
+			ctx.lineWidth = 10;
+			ctx.fillStyle = "paleturquoise";
+			
+			ctx.beginPath();
+			ctx.arc(250,250,200,0,Math.PI*360,true);
+			ctx.closePath();
+			ctx.stroke();
+			ctx.fill();
+			
+			//绘制中心点
+			ctx.beginPath();
+			ctx.arc(250,250,10,0,Math.PI*2,true);
+			ctx.strokeStyle = "red";
+			ctx.lineWidth = 5;
+			ctx.stroke();
+			ctx.fillStyle = "paleturquoise";
+			ctx.fill();
+			
+			//绘制 时刻度
+			for(var i = 0 ;i<12;i++){
+				ctx.save();
+				
+				ctx.lineWidth = 10;
+				ctx.strokeStyle = "green";
+				
+				ctx.translate(250,250);
+				
+				ctx.rotate(i*30*Math.PI/180)
+				
+				ctx.beginPath();
+				ctx.moveTo(0,170);
+				ctx.lineTo(0,200);
+			
+				ctx.closePath();
+				ctx.stroke();
+				ctx.restore();
+			}
+			
+			
+			//绘制 分刻度
+			for(var i = 0 ;i<60;i++){
+				ctx.save();
+				
+				ctx.lineWidth = 5;
+				ctx.strokeStyle = "gold";
+				
+				ctx.translate(250,250);
+				
+				ctx.rotate(i*6*Math.PI/180)
+				
+				ctx.beginPath();
+				ctx.moveTo(0,190);
+				ctx.lineTo(0,200);
+			
+				ctx.closePath();
+				ctx.stroke();
+				ctx.restore();
+			}
+			
+			//绘制时针
+			ctx.save();
+			ctx.lineWidth = 10;
+			ctx.strokeStyle = "#000";
+			ctx.translate(250,250);
+			
+			ctx.beginPath();
+			ctx.moveTo(0,-100);
+			ctx.lineTo(0,0);
+			
+			ctx.closePath();
+			ctx.stroke();
+			ctx.restore();
+			
+			//绘制分针
+			ctx.save();
+			ctx.lineWidth = 5;
+			ctx.strokeStyle = "red";
+			ctx.translate(250,250);
+			ctx.rotate(1*30*Math.PI/180);
+			ctx.beginPath();
+			ctx.moveTo(0,-140);
+			ctx.lineTo(0,0);
+			
+			ctx.closePath();
+			ctx.stroke();
+			ctx.restore();
+			
+			//绘制秒针
+			ctx.save();
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = "blue";
+			ctx.translate(250,250);
+			ctx.rotate(6*30*Math.PI/180);
+			ctx.beginPath();
+			ctx.moveTo(0,-140);
+			ctx.lineTo(0,0);
+			
+			ctx.closePath();
+			ctx.stroke();
+			ctx.restore();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+.header .jumbotron h1 {
+	text-align: center;
+}
+
+.list table,
+.list table thead th {
+	text-align: center;
+}
+.list table td {
+	vertical-align: middle!important;
+}
+
+footer {
+	padding-top: 20px;
+    padding-bottom:20px;
+    color: #99979c;
+    text-align: center;
+    background-color: #2a2730;
+}
+
+.form-control {
+	width: auto;
+}

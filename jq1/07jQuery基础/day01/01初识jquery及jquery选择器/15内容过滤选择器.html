@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+		.left {
+		        width: auto;
+		        height: 120px;
+	   		}
+    
+		    .left div {
+		        width: 70px;
+		        height: 70px;
+		        padding: 5px;
+		        margin: 5px;
+		        float: left;
+		        background: #bbffaa;
+		        border: 1px solid #ccc;
+		    }
+    
+		    .bottom {
+		        width: 800px;
+		    }
+    
+		    .bottom div,
+		    .bottom span {
+		        display: block;
+		        width: 80px;
+		        height: 80px;
+		        margin: 5px;
+		        background: #bbffaa;
+		        float: left;
+		        font-size: 14px;
+		    }
+    
+		    .bottom .small {
+		        width: 60px;
+		        height: 25px;
+		        font-size: 12px;
+		        background: #fab;
+		    }
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*内容过滤选择器
+		：contains(text)选取含有文本内容为text的元素  集合元素
+		：empty 选取不包含子元素或者文本的空元素   集合元素
+		：has(selector)选取含有选择器所匹配的元素  集合元素
+		：parent 选取含有子元素或者文本的元素  集合元素
+		 */
+		/*
+		 注意事项：
+:contains与:has都有查找的意思，但是contains查找包含“指定文本”的元素，has查找包含“指定元素”的元素
+如果:contains匹配的文本包含在元素的子元素中，同样认为是符合条件的。
+:parent与:empty是相反的，两者所涉及的子元素，包括文本节点*/
+	</script>
+</head>
+<body>
+	<h2>内容筛选器</h2>
+    <h3>:contains/:has</h3>
+    <div class="left">
+        <div class="div">
+            <p>:contains</p>
+        </div>
+        <div class="div">
+            <p>:contains</p>
+        </div>
+        <div class="div">
+            <p>
+                <span>:has</span>
+            </p>
+        </div>
+        <div class="div">
+            <p>:contains</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //查找所有class='div'中DOM元素中包含"contains"的元素节点
+        //并且设置颜色
+        $('.div:contains(":contains")').css("color", "#CD00CD");
+    </script>
+
+    <script type="text/javascript">
+        //查找所有class='div'中DOM元素中包含"span"的元素节点
+        //并且设置颜色
+        $(".div:has(span)").css("color", "blue");
+    </script>
+
+
+    <h3>:parent/:empty</h3>
+    <div class="left">
+        <div class="aaron">
+            <a>:parent</a>
+        </div>
+        <div class="aaron">
+            <a>:parent</a>
+        </div>
+        <div class="aaron">
+            <a>:parent</a>
+        </div>
+        <div class="aaron">
+            <a></a>
+        </div>
+    </div>
+    <script type="text/javascript">
+       //选择所有包含子元素或者文本的    a元素
+       //增加一个蓝色的边框
+       $("a:parent").css("border", "3px groove blue");
+    </script>
+
+    <script type="text/javascript">
+       //找到a元素下面的所有空节点(没有子元素)
+       //增加一段文本与边框
+       $("a:empty").text(":empty").css("border", "3px groove red"); 
+    </script>
+
+</body>
+</html>

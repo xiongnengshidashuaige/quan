@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: #ccc;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		
+		<script type="text/javascript">
+			//this 当前发生时间/事件的对象，
+			var arr = [1,2,3,4];
+			arr.a = 12;
+			arr.show = function(){
+				alert(this.a);
+			}
+			
+			//arr.show();//
+			
+			
+			var aDiv = document.querySelectorAll('div');
+			for(var i = 0;i<aDiv.length;i++){
+				aDiv[i].onclick = function(){
+					alert(this.innerHTML);
+				}
+			}
+		</script>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			span{
+				color:#F90013;
+				padding: 5px;
+				font-size: 20px;
+				background: #FFA500;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<input type="text" id="old"/>
+		<button>查找</button>
+		
+		<hr />
+		<p>今天要下雨！下大雨！下暴雨！</p>
+		<script type="text/javascript">
+			var old = document.getElementById("old");
+			var btn =document.getElementsByTagName('button')[0];
+			
+			var oP = document.getElementsByTagName('p')[0];
+			var str = oP.innerHTML;
+			
+			btn.onclick = function(){
+				var o = old.value;
+				if(str.indexOf(o) != -1){
+					console.log(str.indexOf(o));
+					
+					oP.innerHTML = '今天要下<span>雨</span>！下大<span>雨</span>！下暴<span>雨</span>！';
+					
+				}else{
+					alert('没有你要找的字符串');
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+	.wrap {
+        width: auto;
+        height: 200px;
+    }
+    
+    .wrap div {
+        width: 350px;
+        height: 150px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        background: #bbffaa;
+        border: 1px solid #ccc;
+    }
+    span {
+        color: blue;
+    }
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input:first').click(function(){
+			//通过prev方法，找到每个class=item-2的li节点所对应的上一个兄弟节点
+				$('li.item-2').prev().css('border','1px solid red');
+			});
+			
+			
+			$("input:last").click(function() {
+		        //找到所有class=item-2的li
+		        //然后筛选出最后一个，加上蓝色的边
+		        $('.item-3').prev(':last').css('border', '1px solid blue')
+		    })
+		});
+	</script>
+</head>
+<body>
+	<h2>prev方法()</h2>
+    <div class="wrap first-div">
+	    <div class="div">
+            <ul class="level-1">
+                <li class="item-1">1</li>
+                <li class="item-2">2</li>
+                <li class="item-3">3</li>
+            </ul>
+        </div>
+        <div class="div">
+            <ul class="level-2">
+                <li class="item-1">1</li>
+                <li class="item-2">2</li>
+                <li class="item-3">3</li>
+            </ul>
+        </div>
+        <div class="div">
+            <ul class="level-3">
+                <li class="item-1">1</li>
+                <li class="item-2">2</li>
+                <li class="item-3">3</li>
+            </ul>
+        </div>
+    </div>
+	<input type="button" value="点击：prev无参数" id="btn1"/>
+    <input type="button" value="点击：prev传递选择器" id="btn2"/>
+</body>
+</html>

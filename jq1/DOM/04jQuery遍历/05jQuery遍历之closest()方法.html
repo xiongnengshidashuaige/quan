@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+	.wrap {
+        width: auto;
+        height: 200px;
+    }
+    
+    .wrap div {
+        width: 350px;
+        height: 150px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        background: #bbffaa;
+        border: 1px solid #ccc;
+    }
+    span {
+        color: blue;
+    }
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input:first').click(function(){
+				//找到class="item-1"的li元素
+				//通过closest方法往上找到class=".level-2"的ul元素加上边框颜色
+				$('li.item-1').closest('.level-2').css('border','1px solid red');
+			});
+			
+			
+			$("input:last").click(function() {
+		        var itemB = $('.item-b')
+       			$('li.item-1').closest(itemB).css('border', '1px solid blue');
+		    })
+		});
+	</script>
+<!--
+.parents()和.closest()两者区别:
+
+1.起始位置不同：.closest开始于当前元素 .parents开始于父元素
+2.遍历的目标不同：.closest要找到指定的目标，.parents遍历到文档根元素，closest向上查找，直到找到一个匹配的就停止查找，parents一直查找到根元素，并将匹配的元素加入集合
+3.结果不同：.closest返回的是包含零个或一个元素的jquery对象，parents返回的是包含零个或一个或多个元素的jquery对象
+-->
+</head>
+<body>
+	<h2>closest方法()</h2>
+    <div class="wrap first-div">
+	    <div class="div">
+	        <ul class="level-2">
+	            <li class="item-a">A</li>
+	            <li class="item-b">B
+	                <ul class="level-3">
+	                    <li class="item-1">1</li>
+	                    <li class="item-2">2</li>
+	                    <li class="item-3">3</li>
+	                </ul>
+	            </li>
+	            <li class="item-c">C</li>
+	        </ul>
+	    </div>
+	    <div class="div">
+	        <ul class="level-2">
+	            <li class="item-a">A</li>
+	            <li class="item-b">B
+	                <ul class="level-3">
+	                    <li class="item-1">1</li>
+	                    <li class="item-2">2</li>
+	                    <li class="item-3">3</li>
+	                </ul>
+	            </li>
+	            <li class="item-c">C</li>
+	        </ul>
+	    </div>
+    </div>
+	<input type="button" value="点击：closest传递选择器" id="btn1"/>
+    <input type="button" value="点击：closest传递一个元素对象" id="btn2"/>
+</body>
+</html>

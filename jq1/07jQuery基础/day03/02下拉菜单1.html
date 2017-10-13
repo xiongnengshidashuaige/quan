@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			ul,ol {
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
+			
+			/*------*/
+			ul {
+				width: 1000px;
+				height: 50px;
+				margin: 0 auto;
+				background: #00B7EE;
+			}
+			ul li {
+				float: left;
+			}
+			
+			ul li a {
+				display: inline-block;
+				padding: 5px 30px;
+				height: 40px;
+				line-height: 40px;
+				border-right: 1px solid #fff;
+				/*color: #fff;*/
+			}
+			ul li:hover ol{
+				display: block;
+			}
+			
+			ol {
+				display: none;
+			}
+			ol li {
+				width: 100px;
+				height: 30px;
+				background: #0000FF;
+				text-align: center;
+				border-bottom: 1px solid #FF2222;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<a href="">菜单1</a>
+				<ol>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ol>
+			</li>
+			<li><a href="">菜单2</a></li>
+			<li><a href="">菜单3</a></li>
+			<li><a href="">菜单4</a></li>
+			<li><a href="">菜单5</a></li>
+		</ul>
+		
+		
+	</body>
+</html>

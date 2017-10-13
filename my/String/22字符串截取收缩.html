@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{  
+				width:400px;  
+				border:10px solid greenyellow;
+				background:#ccc;  
+				padding:20px; 
+				font-size:16px; 
+				font-family:微软雅黑; 
+				margin:40px auto 0; 
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			<span>
+				从前,有个乌山头住一位巫婆,
+				巫婆养了一只乌鸦和一只乌鸦的朋友乌龟,
+				住在同一个屋檐下,
+				乌鸦常常问乌龟一些奇怪的问题,
+				乌龟常常无法回答乌鸦的问题,
+				只好求助他的朋友乌贼,
+				所以也难不倒乌龟.
+			</span>
+			……<a href="javascript:;">>>收缩</a>
+		</p>
+		
+		<script type="text/javascript">
+			//第一步 获取元素
+			var oP = document.getElementsByTagName('p')[0];
+			var oSpan = oP.getElementsByTagName('span')[0];
+			var oA = oP.getElementsByTagName('a')[0];
+			
+			//console.log(oP.innerHTML);
+			//console.log(oP.innerText);
+			
+			var str = oSpan.innerText;
+			
+			var on = true;
+			oA.onclick = function(){
+				if(on){
+					oSpan.innerText = str.substring(0,10);
+					oA.innerHTML = '>>展开';
+				}else{
+					oSpan.innerText = str;
+					oA.innerHTML = '>>收缩';
+				}
+				
+				on = !on;
+			}
+			
+		</script>
+		
+	</body>
+</html>
+<!-- 
+	innerHTML 可以包含标签
+	innerText 只是单纯的文本
+	
+	
+	
+	
+-->

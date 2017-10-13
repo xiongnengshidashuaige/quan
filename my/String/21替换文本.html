@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				color:#F90013;
+				padding: 10px;
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text"/>
+		<button>替换</button>
+		<input type="text"/>
+		<hr />
+		<p>今天好！明天好！</p>
+		<script type="text/javascript">
+			var btn = document.querySelector('button');
+			btn.onclick  = function(){
+				var txt1 = document.querySelectorAll('input')[0].value;
+				var txt2 = document.querySelectorAll('input')[1].value;
+				
+				console.log(txt1);
+				console.log(txt2);
+				
+				var oP = document.querySelector('p');
+				var str = oP.innerHTML;
+
+				
+				oP.innerHTML = str.split(txt1).join('<span>'+txt2+'</span>');
+				
+				
+			}
+		</script>
+	</body>
+</html>

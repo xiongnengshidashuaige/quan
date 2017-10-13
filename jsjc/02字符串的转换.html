@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<input type="text" />
+		<input type="button" value="获取" />
+		
+		<script type="text/javascript">
+			var aInp = document.querySelectorAll('input');
+			aInp[2].onclick = function(){
+				alert(aInp[0].value+aInp[1].value);
+				//字符串 转 数字
+				//parseInt()
+				//parseFloat()
+			}
+		</script>
+	</body>
+</html>
+<!--
+	输入框 的值 是字符串 不是数字
+	
+	//字符串 转 数字
+		parseInt()
+		parseFloat()
+-->

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="old"/>
+		<button>替换</button>
+		<input type="text" id="new" />
+		<hr />
+		<p>今天要下<span>雨</span>！下大雨！下暴雨！</p>
+		<script type="text/javascript">
+			var old = document.getElementById("old");
+			var newtxt = document.getElementById("new");
+			var btn =document.getElementsByTagName('button')[0];
+			
+			var oP = document.getElementsByTagName('p')[0];
+			var str = oP.innerHTML;
+			
+			btn.onclick = function(){
+				var o = old.value;
+				var n = newtxt.value;
+				if(str.indexOf(o) == -1){
+					alert('没有你要找的字符串');
+				}else{
+					alert('有');
+					console.log(str.indexOf(o));
+					
+					str[4]='哈哈';
+					console.log(str[4]='哈哈')
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+    <style type="text/css">
+        div {
+            height: 200px;
+            background: #000;
+        }
+    </style>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+  /*  $(document).ready 的作用是
+    等页面的文档（document）中的节点都加载完毕后，
+    再执行后续的代码，因为我们在执行代码的时候，
+    可能会依赖页面的某一个元素，我们要确保这个元素
+    真正的的被加载完毕后才能正确的使用。*/
+        $(document).ready(function () {
+            $("#btnClick").click(function () {
+                // 语句
+                $("div").hide();
+            });
+        });
+    </script>
+</head>
+<body>
+	<input type="button" value="点击" id="btnClick"/>
+    <div></div>
+</body>
+</html>

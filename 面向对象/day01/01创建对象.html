@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//创建对象的方式
+			//第一种 通过类（构造函数）的实例化 来创建
+			var now = new Date();
+			console.log(now);
+			
+			var now2 = new Date();
+			
+			// now now2 是通过 Date 对象 new（创建）出来的一个实例 （对象）
+			
+			//alert(typeof  now);//Object
+			
+			//第二种 方式 使用对象的字面量 直接创建对象
+			
+			var car = {};
+			//alert(car); //Object 
+			console.log(car);
+			
+			//对象字面量 是一个名/值 对 列表，每个名/值 对 之间用逗号分隔，最后用一个 大括号 括起来。
+			//名/值 对 表示对象的一个属性或方法，名和值之间 用冒号 分隔
+			var myCar = {
+				'name':'BWM',//品牌     //属性
+				'color':'red',//颜色  //属性
+				'price':'$10,000',//价格  //属性
+				
+				"run":function(){//方法
+					console.log('我可以跑：100km/h')
+					//return "100km/h";
+				},
+				"fly":function(){//方法
+					return "1000km/h";
+				}
+			};
+			console.log(myCar);
+			//一个对象 可以拥有多个属性 和方法
+			
+			
+			//调 对象的属性
+			console.log(myCar.name);//链式写法
+			console.log(myCar['name']);//采取了 数组的写法
+			
+			//调 对象的方法
+			myCar.run();//我可以跑：100km/h
+			
+			
+		</script>
+		
+	</body>
+</html>

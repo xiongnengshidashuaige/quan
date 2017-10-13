@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			#demo{
+				background: linear-gradient(#00111e 30%,#033d5e);
+				background: -webkit-linear-gradient(#00111e 30%,#033d5e);
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="demo" width="" height="">
+			<p>你的浏览器不支持</p>
+		</canvas>
+		<script type="text/javascript">
+			var canvas=document.getElementById('demo');
+//			if(canvas.getContext){
+//				alert('你的浏览器支持canvas')
+//			}else{
+//				alert('你的浏览器不支持canvas')
+//			}
+			var cas=canvas.getContext('2d');
+		 	var xm=canvas.width=window.screen.availWidth;//获取浏览器同等宽度
+		 	var hm=canvas.height=window.screen.availHeight;//获取浏览器同等高度
+		 	
+		 	var demo=Math.round(xm+hm);//四舍五入 星星数量
+		 	for(var i=0;i<+demo;i++){
+		 		var ranX=Math.floor((Math.random()*xm)+1);//绘制矩形X轴坐标 随机数
+		 		var ranY=Math.floor((Math.random()*hm)+1);//绘制矩形Y轴坐标 随机数
+		 		var rand=Math.floor((Math.random()*3)+1);//星星大小
+		 		var randp=Math.floor((Math.random()*9)+1);//星星透明度1-9
+		 		var randc=Math.floor((Math.random()*255)+1);//随机1-255颜色值
+		 		if(rand>1){
+		 			cas.shadowBlur=Math.floor((Math.random()*15)+5);//阴影5-15
+		 			cas.shadowColor='#fff';//阴影颜色
+		 		}
+		 		cas.fillStyle='hsla('+randc+',30%,80%,.'+randp+randp+')';
+		 		cas.beginPath();
+		 		cas.fillRect(ranX,ranY,rand,rand)
+		 	}
+		</script>
+	</body>
+</html>

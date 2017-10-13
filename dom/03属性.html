@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p>我是一个段落</p>
+			
+			<ul id="ul1" class="list" name="mylist" data="111111">
+				<li>00001 <span>我是span中的内容</span></li>
+				<li>00002</li>
+				<li>00003</li>
+				<li>00004</li>
+			</ul>
+			
+		</div>
+		
+		
+		<script type="text/javascript">
+			var oUl = document.getElementById("ul1");
+			console.log(oUl.attributes);//获取元素的 所有属性
+			console.log(oUl.getAttribute('name')) //获取 具体某一个属性 的值
+			oUl.setAttribute('name','yourlist'); //设置 具体某一个属性 的值
+			console.log(oUl.getAttribute('name'));
+			
+			//element.hasAttribute()	如果元素拥有指定属性，则返回true，否则返回 false。
+			//element.hasAttributes()	如果元素拥有属性，则返回 true，否则返回 false。
+			console.log(oUl.hasAttribute('id')); //true
+			console.log(oUl.hasAttributes()); //true
+			
+			console.log(document.querySelector('p').hasAttributes());//false
+			console.log(oUl.getAttributeNode('id'));// id = "ul1"
+			
+			//oUl.removeAttribute('data');
+			var a = oUl.getAttributeNode('data');
+			console.log(oUl.removeAttributeNode(a));
+			
+		
+		</script>
+	</body>
+</html>
+<!--
+	DOM：
+	
+	属性：
+		element.attributes 
+	
+-->

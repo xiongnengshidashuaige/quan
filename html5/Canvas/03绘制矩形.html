@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#c {
+				/*width: 1000px;
+				height: 500px;*/
+				
+				
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="c"></canvas>
+		
+		<script type="text/javascript">
+			var c = document.getElementById("c");
+			//canvas 默认的画布大小 为 300*150
+			c.width = 1000;
+			c.height = 3000;
+			
+			var ctx = c.getContext('2d');
+			
+			//绘制粉色填充矩形
+			ctx.fillStyle = "pink";
+			ctx.fillRect(0,0,1000,500);
+			
+			//清除指定矩形区域，让清除部分完全透明。
+			ctx.clearRect(200, 300, 500, 100);
+			
+			//绘制一个红色的矩形边框
+			ctx.strokeStyle = "red";
+			ctx.strokeRect(0,600,1000,500);
+			
+			
+			 
+		</script>
+	</body>
+</html>

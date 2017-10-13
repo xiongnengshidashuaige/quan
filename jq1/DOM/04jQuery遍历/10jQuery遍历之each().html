@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+	    .wrap {
+	        width: auto;
+	        height: 150px;
+	    }
+	    
+	    .wrap div {
+	        width: 150px;
+	        height: 120px;
+	        padding: 5px;
+	        margin: 5px;
+	        float: left;
+	        background: #bbffaa;
+	        border: 1px solid #ccc;
+	    }
+    </style>
+    <script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input:first').click(function(){
+				 //遍历所有的li
+		        //修改每个li内的字体颜色
+		        $("li").each(function(index, element) {
+		            $(this).css('color','red')
+		        })
+			});
+			
+			
+			$("input:last").click(function() {
+		         //遍历所有的li
+		        //修改偶数li内的字体颜色
+		        $("li").each(function(index, element) {
+		            if (index % 2) {
+		                $(this).css('color','blue')
+		            }
+		        })
+		   });
+		});
+	</script>
+</head>
+<body>
+	<h2>each方法()</h2>
+    <div class="wrap first-div">
+        <div class="div">
+            <ul>
+                <li>list item 1</li>
+                <li>list item 2</li>
+                <li>list item 3</li>
+            </ul>
+            <p>新的p元素</p>
+        </div>
+    </div>
+    <div class="right"></div>
+    
+    <input type="button" value="点击：each方法遍历元素" id="btn1"/>
+    <input type="button" value="点击：each方法回调判断" id="btn2"/>
+</body>
+</html>

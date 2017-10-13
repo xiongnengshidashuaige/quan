@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#click{
+				height: 100px;
+				width: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div id="click">
+			
+		</div>-->
+	</body>
+	<!--<script type="text/javascript">
+		$(document).ready(function(){
+			$('#click').click(function(){
+				alert('click one time');
+			});
+			$('#click').click(function(){
+				alert('click two time');
+			});
+		});
+	</script>-->
+<script type="text/javascript">
+function setEnglish(bodyString) {
+       var result = bodyString;    
+       result = result.replaceAll('發料量','Issue Qty');
+      result = result.replaceAll('單位別','Unit');
+       result = result.replaceAll('待交運','To be Delivered');
+       result = result.replaceAll('應發量','Shoulsd Issue');
+      result = result.replaceAll('應用量','Should Use');
+     return result;
+ }    
+</script>
+</html>

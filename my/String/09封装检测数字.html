@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<button>检测</button>
+		<script type="text/javascript">
+			var txt = document.querySelector('input');
+			var btn = document.querySelector('button'); 
+			//方法一 isNaN()
+			/*btn.onclick = function(){
+				var v = txt.value;
+				if(isNaN(v)){
+					alert('不通过');
+				}else{
+					alert('通过');
+				}
+				
+			}*/
+			//方法二 正则
+			/*btn.onclick = function(){
+				var v = txt.value;
+				if(v.match(/\D/)){
+					alert('不通过');
+				}else{
+					alert('通过');
+				}
+				
+			}*/
+			
+			//方法三 
+			var str = '0123456789';//48~57
+			for(var i=0;i<str.length;i++){
+				console.log(str.charCodeAt(i));
+			}
+			btn.onclick = function(){
+				var v = txt.value;
+				if(checkNum(v)){
+					
+					alert('通过');
+				}else{
+					alert('不通过');
+				}
+				
+			}
+			
+			function checkNum(s){
+				for(var i=0;i<s.length;i++){
+					//console.log(v.charCodeAt(i));
+					var n=s.charCodeAt(i)
+					if(n<48 || n>57){
+						return false;
+					}
+					
+				}
+				return true;
+			}
+		</script>
+	</body>
+</html>

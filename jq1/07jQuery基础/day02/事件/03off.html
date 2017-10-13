@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				border:5px solid #FF0000;
+			}
+		</style>
+		<script src="../../lib/jquery-1.12.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('div').on('mouseover mouseout',function(){
+					console.log(1);
+				});
+				
+//				$('div').on('click','button',{'name':'bob'},function(e){
+//					
+//					alert('aaa:'+e.data.name);
+//				});
+				//$('div').off('mouseout');
+				
+				
+					
+				$('div').on('click','button',foo);
+				
+				$('div').off('click','button',foo);
+				
+				function foo(){
+					console.log('button的clic事件');
+				}
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<button>按钮</button>
+		</div>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			button {
+				margin-right: 10px;
+				padding: 10px;
+			}
+			button:hover {
+				background:red;
+			}
+			.demo {
+				width: 600px;
+			}
+			
+			span {
+				display: inline-block;
+				padding: 5px 10px;
+				background: #ccc;
+				margin: 10px;
+			}
+			.active {
+				background:#FF0000;
+			}
+			button[disabled] {
+				background: blueviolet;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="person"></div>
+		<hr />
+		<div class="demo">
+			<!--<span></span>-->
+		</div>
+		<hr />
+		<demo class="result">
+			
+		</demo>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			var btn = '';
+			var span = '';
+			var num = 25;
+			var arrDemo = [];
+			var person = ['张欣','张琴','王锋云','董政清','熊能','卢升阳','康勇','唐藻','刘捷','杨凯'];
+			
+			//动态生成 人名 按钮
+			for(var i=0;i<person.length;i++){
+				btn ='<button>'+person[i]+'</button>';
+				$('.person').append(btn);
+			};
+			
+			//生成 demo 数组
+			for(var i=1;i<=num;i++){
+				arrDemo.push('demo'+i);
+			};
+			
+			//动态生成 demo
+			for(var i=0;i<arrDemo.length;i++){
+				span += '<span>'+arrDemo[i]+'</span>';
+			};
+			
+			//
+			$('.demo').append(span);
+			
+			
+			var timer = null;
+			var on = true;
+			var n = 0;
+			$('button').click(function(){
+				if(on){
+					timer = setInterval(function(){
+						n = Math.round(Math.random()*25);//0-25
+						
+						
+						//console.log(n);
+						$('span').eq(n).addClass('active').siblings().removeClass('active');
+					},100);
+					$(this).addClass('active');
+					$(this).siblings().attr('disabled',true);
+				}else{
+					clearInterval(timer);
+					var p = $(this).html()+' ====> '+$('span').eq(n).text();
+					
+					p = $('<p></p>').html(p);
+					$('.result').append(p);
+					
+					$('span').eq(n).remove();
+					
+					$(this).attr('disabled',true).siblings().attr('disabled',false);//让按钮禁用
+					//$(this).remove();
+					
+				}
+				
+				on = !on;
+				
+				
+			});
+			
+			
+		</script>
+	</body>
+</html>
+<!--
+	bug:
+	demo会重复//
+	可以重复点击//
+	可能不对应//
+	后面的demo不会涉及到//	
+-->

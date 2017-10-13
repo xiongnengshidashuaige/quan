@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//创建	AJAX 对象
+			var obj;
+			if(window.XMLHttpRequest){
+				//ie7+ firefox chrome opera safari
+				obj = new XMLHttpRequest();
+			}else{
+				//ie5 ie6
+				obj = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			
+			//创建一个http请求，并设置请求的地址
+			obj.open('get','a.txt',true);
+			
+			//发送请求
+			obj.send();
+			
+			//感知ajax的状态，当状态改变时 会触发事件 onreadystatechange 
+			obj.onreadystatechange = function(){
+				console.log(obj.readyState);
+				
+//				readyState:存有XMLHttpRequest 的状态,从0-4发生变化
+//				0:请求未初始化
+//				1:服务器连接已建立
+//				2:请求已接收
+//				3:请求处理中
+//				4:请求已完成,且响应已就绪
+				if(obj.readyState == 4  && obj.status ==200){
+					alert(obj.responseText);
+				}
+			}
+		</script>
+	</body>
+</html>

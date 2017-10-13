@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--ie兼容性-->
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				font-size:12px ;
+			}
+			
+			body {
+				font-size: 10px;
+			}
+			ul,ol {
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
+			
+			.fl {
+				float: left;
+			}
+			.fr {
+				float: right;
+			}
+			.clearfix {
+				content: '';
+				height: 0;
+				clear: both;
+			}
+			.clearfix {
+				*zoom:1;
+			}
+			
+			img {
+				display: block;
+			    max-width: 100%;
+			    height: auto;
+			    box-sizing: border-box;
+			    vertical-align: middle;
+			    border: 0;
+			}
+			
+			/*版心*/
+			.container {
+				width: 970px;
+				margin: 0 auto;
+			}
+			/**/
+			@media  (max-width:768px ) {
+				
+				.container {
+					width: 100%;	
+				}
+			}
+			button {
+				display: none;
+			}
+			
+			/*------*/
+			.header {
+				width: 100%;
+				height: 50px;
+				padding: 15px 0;
+				border-bottom: 2px solid #0ba1e4;
+    			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			}
+			.nav {
+				
+			}
+			.nav li {
+				float: left;
+			}
+			.nav li a {
+				font-size: 16px;
+				line-height: 50px;
+				padding: 16px 25px 5px;
+				color: #777;
+			}
+			
+			/*768px  移动端*/
+			@media (max-width: 768px) {
+				.nav {
+					display: none;
+				}
+				.nav li {
+					clear:both;
+				}
+				.nav li a {
+					padding: 4rem;
+					font-size: 2rem;
+				}
+				button {
+					display: block;
+				}
+			}
+			
+			@media (min-width: 768px) and (max-width:1200px) {
+				body{
+					background:#0066CC;
+				}
+			}
+			
+			/*banner*/
+			.banner {
+				width: 100%;
+				height: 540px;
+			}
+			
+			span {
+				font-size: 24px;
+				font-weight: bold;
+			}
+			
+			.font {
+				font-size: 20px;
+			}
+			.font p {
+				font-size: 2em;
+			}
+			.font em {
+				font-style:normal;
+				font-size: 2rem;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div class="container clearfix" >
+				<a href="" class="fl"><img src="img/logo.png"/></a>
+				<ul class="nav fr">
+					<li><a href="#" target="_blank">首页</a></li>
+					<li><a href="#" target="_blank">签证指南</a></li>
+					<li><a href="#" target="_blank">签证加急</a></li>
+					<li><a href="#" target="_blank">签证服务</a></li>
+					<li><a href="#" target="_blank">签证资讯</a></li>
+					<li><a href="#" target="_blank">资料下载</a></li>
+				</ul>
+				<button>显示</button>
+			</div>
+		</div>
+		<div class="banner">
+			<ul>
+				<li><a href=""><img src="img/banner1.jpg" alt="" /></a></li>
+				<li><a href=""><img src="img/banner2.jpg" alt="" /></a></li>
+			</ul>
+		</div>
+		<div class="result"></div>
+		<div class="good"></div>
+		<div class="service"></div>
+		
+		<h1>123456789</h1><span>123456789</span>
+		
+		<div class="font">
+			<p>abcdefg</p>
+			<em>abcdefg</em>
+		</div>
+		
+		
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$('button').click(function(){
+				$('.nav').show();
+			});
+		</script>
+	</body>
+</html>
+<!--
+	rem
+	em
+	
+	
+-->

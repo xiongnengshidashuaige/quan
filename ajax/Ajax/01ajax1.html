@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="获取 a.txt 中的内容" />
+		
+		<script>
+			var oBtn = document.querySelector('input');
+			oBtn.onclick = function(){
+				//第一步 创建对象
+				var xhr;
+				if(window.XMLHttpRequest){
+					//IE7+ firefox chrome opera safari 
+					xhr = new XMLHttpRequest();
+				}else{
+					//IE6 IE5 浏览器
+					xhr = new ActiveXObject('Microsoft.XMLHTTP');
+				}
+				
+				//第二步 向服务器发送请求
+//				xhr.open(method,url,async)
+//				method:请求的类型:post / get 
+//				url:文件在服务器上的位置
+//				async:true(异步)/false(同步)
+				
+				
+				xhr.open('GET','a.txt',true);
+				xhr.send();
+				
+				//第三步 服务器响应
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState == 4 && xhr.status == 200){
+						
+						//alert(xhr.responseText);
+						document.write('<h1>'+xhr.responseText+'</h1>')
+					}
+				}
+				
+			}
+		</script>
+	</body>
+</html>

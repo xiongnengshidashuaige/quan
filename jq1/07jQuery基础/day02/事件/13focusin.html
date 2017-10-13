@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 500px;
+				height: 100px;
+				border:1px solid #FF0000;
+				margin: 20px;
+			}
+		</style>
+		<script src="../../lib/jquery-1.12.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("p").focusin(function(){
+					 $(this).find("span").css('display','inline').fadeOut(1000);
+				});
+				
+				$("p").focusout(function(){
+					 $(this).find("span").css('display','inline').fadeIn(2000);
+				});
+				
+				/*$("p").focus(function(){
+					console.log('abcdefg');
+				});*/
+				
+			});
+		</script>
+	</head>
+	<body>
+		<p><input type="text" /> <span>focusout fire</span></p>
+		<p><input type="password" /> <span>focusout fire</span></p>
+	</body>
+</html>

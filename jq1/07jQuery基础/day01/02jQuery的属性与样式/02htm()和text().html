@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<ul>
+				<!--<li>11111</li>
+				<li>列表1</li>
+				<li>列表2</li>
+				<li>列表3</li>
+				<li>列表4</li>
+				<li>列表5</li>
+				<li>列表6</li>
+				<li>列表7</li>
+				<li>列表8</li>
+				<li>列表9</li>
+				<li>列表10</li>-->
+			</ul>
+		</div>
+		
+		
+		<script type="text/javascript">
+			var ul = $('ul').html();
+			var ul2 = $('ul').text();
+			
+			var li =`
+						<li>11111</li>
+						<li>列表1</li>
+						<li>列表2</li>
+						<li>列表3</li>
+						<li>列表4</li>
+						<li>列表5</li>
+						<li>列表6
+							<ol>
+							`+1212222+`
+							</ol>
+						</li>
+						<li>列表7</li>
+						<li>列表8</li>
+						<li>列表9</li>
+						<li>列表10</li>
+					`;
+			$('ul').html(li);
+			console.log(ul);
+			console.log(ul2);
+		</script>
+	</body>
+</html>
+<!--
+	''
+	"" es5
+	`` es6
+	
+-->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../lib/jquery-1.12.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('button').bind('mousedown',function(){
+					console.log(1);
+				});
+				
+				$('button').bind('mouseup',function(){
+					console.log(2);
+				});
+				
+				
+				$('button').bind('mousemove',function(){
+					console.log(3);
+				});
+				
+				
+				$('button').bind('mouseenter',function(){
+					console.log(4);
+				});
+				
+				$('button').bind('mouseleave',function(){
+					console.log(5);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button>按钮</button>
+	</body>
+</html>

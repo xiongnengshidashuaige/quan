@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+//			var Person = {};//Person is not a constructor
+//			var xiaoming = new Person('小明');
+//			var xiaowei = new Person('小薇');
+			
+			//构造函数
+			function Person(){
+				this.name = '小明',
+				this.age = 18,
+				this.married=false,
+				this.address={
+					conuntry:'中国',
+					province:'重庆',
+					city:'江北区'
+				},
+				this.say=function(){
+					return  '真美丽！真好！';
+				}
+			}
+			
+			var p1 = new Person();
+			var p2 = new Person();
+			console.log(p1);
+			console.log(p2);
+			/*-------------------------------------*/
+			console.log("----------------------------------------");
+			function Person2(name,age,marray){
+				this.name = name,
+				this.age = age,
+				this.married= marray,
+				this.address={
+					conuntry:'中国',
+					province:'重庆',
+					city:'江北区'
+				},
+				this.say=function(){
+					return  '真美丽！真好！';
+				}
+			}
+			var p2 = new Person2();
+			var xiaowei = new Person2('小薇',12,false);
+			var xiaoming = new Person2('小明',2,true);
+			console.log(p2);
+			console.log(xiaowei);
+			console.log(xiaoming);
+		</script>
+	</body>
+</html>

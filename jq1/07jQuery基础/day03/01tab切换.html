@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.wrap {
+				width: 400px;
+				margin: 100px auto;
+			}
+			.box {
+				width: 400px;
+				height: 200px;
+				background: #006699;
+				text-align: center;
+				font-size: 30px;
+				line-height: 200px;
+				color: #fff;
+			}
+			.tab-content {
+				width: 400px;
+				height: 200px;
+				overflow: hidden;
+			}
+			button {
+				width: 100px;
+				height: 50px;
+				line-height: 50px;
+				border: none;
+				outline: none;
+				cursor: pointer;
+			}
+			.on {
+				background: #FF0000;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="tab-btn">
+				<button class="on">按钮1</button>
+				<button>按钮2</button>
+				<button>按钮3</button>
+			</div>
+			<hr />
+			<div class="tab-content">
+				<div class="box">我是div1</div>
+				<div class="box">我是div2</div>
+				<div class="box">我是div3</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$(function(){
+				$('button').click(function(){
+					console.log($(this).index())
+					$(this).addClass('on').siblings().removeClass('on');
+					$('.box').eq($(this).index()).show().siblings().hide();
+				});
+			})
+			
+		</script>
+		
+	</body>
+</html>

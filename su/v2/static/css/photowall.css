@@ -1,0 +1,45 @@
+
+body {
+	background-color:#000;
+	font-family:Arial;
+	color:#555;
+	font-size:12px;
+}
+.photowall {
+	margin: 100px auto;
+	/*position: relative;*/
+}
+.center-img {
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 999;
+	top:50%;
+	left:50%;
+	margin-top: -150px;
+	margin-left: -150px;
+	transition: 5s all;
+	overflow: hidden;
+}
+.center-img img {
+	width: 100%;
+	height: 100%;
+}
+.center-img a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	text-align: center;
+	font-size: 30px;
+	line-height: 400px;
+	color: #fff;
+	transition: 1s all;
+	text-indent: 9999px;
+}
+.center-img:hover {
+	transform: rotate(960deg);
+}

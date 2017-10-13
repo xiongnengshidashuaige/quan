@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var n1 = new Number();//0
+			console.log(n1);		//number
+			console.log(typeof n1); //object
+			
+			//constructor	返回对创建此对象的 Number 函数的引用。
+			if(n1.constructor == Number){
+				console.log('yes');
+			}
+			
+			console.log(Number.MAX_VALUE);//1.7976931348623157e+308
+			console.log(Number.MIN_VALUE);//5e-324
+			
+			console.log(Number.NaN);//NaN
+			
+			console.log(Number.NEGATIVE_INFINITY);//-Infinity
+			console.log(Number.POSITIVE_INFINITY);//Infinity
+		
+		
+		</script>
+	</body>
+</html>
+<!--
+		MAX_VALUE	可表示的最大的数。
+		MIN_VALUE	可表示的最小的数。
+		NaN	非数字值。 （重点）
+		NEGATIVE_INFINITY	负无穷大，溢出时返回该值。
+		POSITIVE_INFINITY	正无穷大，溢出时返回该值。
+		isFinite() 函数用于检查其参数是否是无穷大。
+-->
+

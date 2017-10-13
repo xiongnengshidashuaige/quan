@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p>我是一个段落</p>
+			
+			<ul id="ul1" class="list" name="mylist" data="111111">
+				
+				<li>00001 <span>我是span中的内容</span></li>
+				
+				<li>00002</li>
+				
+				<li>00003</li>
+				<p>11111111111</p> <!--非法嵌套的子节点-->
+				<li>00004</li>
+				
+			</ul>
+			
+		</div>
+		
+		<script type="text/javascript">
+			var oUl = document.getElementById("ul1");
+			
+			//console.log(oUl.childNodes);// 9
+			
+			
+			
+			for(var i = 0;i<oUl.childNodes.length;i++){
+				console.log(oUl.childNodes[i]);
+			}
+			
+			//console.log(oUl.childNodes[0].childNodes[0].nodeValue);
+			console.log(oUl.childNodes[1].childNodes[0].nodeValue);
+		</script>
+	</body>
+</html>
+<!--
+	E.childNodes : 只读 属性 子节点列表集合 只包含一级子节点，不包含后辈子孙以下的节点
+	标准下：包含了 文本和元素类型 的节点 ，也会包含非法嵌套的子节点
+	非标准下： 只包含 元素类型的节点 IE7 以下不会包含非法嵌套的子节点
+	
+	
+-->

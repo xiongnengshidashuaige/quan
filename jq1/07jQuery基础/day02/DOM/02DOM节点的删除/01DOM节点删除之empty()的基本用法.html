@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+    <style type="text/css">
+	    div {
+	        background: #bbffaa;
+	        width: 300px;
+	    }
+    </style>
+    <script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("input:button").click(function() {
+		        //通过empty移除了当前div元素下的所有p元素
+		        //但是本身id=test的div元素没有被删除
+		        $("#test").empty();
+		    })
+		});
+	</script>
+</head>
+
+<body>
+    <h2>通过empty移除元素</h2>
+    <div id="test">
+        <p>p元素1</p>
+        <p>p元素2</p>
+    </div>
+    <input type="button" value="点击通过jQuery的empty移除元素" />
+</body>
+</html>

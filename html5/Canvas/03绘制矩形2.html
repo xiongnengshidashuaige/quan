@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#c {
+				/*width: 1000px;
+				height: 500px;*/
+				
+				
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="c"></canvas>
+		
+		<script type="text/javascript">
+		
+			
+			function draw() {
+				var c = document.getElementById("c");
+				//canvas 默认的画布大小 为 300*150
+				c.width = 1000;
+				c.height = 3000;
+			  
+			  if (c.getContext) {
+			    var ctx = c.getContext('2d');
+			
+			    ctx.fillRect(25,25,100,100);
+			    ctx.clearRect(45,45,60,60);
+			    ctx.strokeRect(50,50,50,50);
+			  }
+			}
+			
+			draw();
+			
+			
+			 
+		</script>
+	</body>
+</html>

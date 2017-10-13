@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../lib/jquery-1.12.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//$('button').
+				$(window).keydown(function(event){
+					console.log(event.keyCode);
+					
+				  switch(event.keyCode) {
+				    // ...
+				    // 不同的按键可以做不同的事情
+				    // 不同的浏览器的keycode不同
+				    // 更多详细信息:     http://unixpapa.com/js/key.html
+				    // ...
+				    case 13:
+				   // alert('你敲回车了');
+				    console.log($('input[type=text]').val());
+				    break;
+				    
+				    case 50:
+				    alert('000');
+				    break;
+				    
+				  }
+				});
+				
+				$(window).keyup(function(event){
+					if(event.keyCode==13){
+						$('input[type=text]').val('')
+					}
+				});
+				
+				$(document).keypress(function(event){
+//					if(event.keyCode==13){
+//						$('input[type=text]').val('')
+//					}
+					console.log('a');
+				});
+				
+				$('input[type=submit]').click(function(){
+					//alert(1)
+					  console.log($('input[type=text]').val());
+				});
+				
+				
+				
+				
+			});
+		</script>
+	</head>
+	<body>
+		<button>按钮</button>
+		<input type="text" />
+		<input type="submit" value="发送" />
+	</body>
+</html>

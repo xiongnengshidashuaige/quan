@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = 10;
+			var b = 20;
+			
+			function fn1(a,b,c){
+				console.log(fn1.length);//形参的个数
+				console.log(arguments);
+				console.log(arguments.length);//实参的个数
+				
+				if(fn1.length == arguments.length ){
+					console.log(a+b+c);
+				}else{
+					console.log("你的参数不匹配");
+				}
+//				console.log(a+b);
+//				console.log(a+b+c);
+			}
+			
+			fn1(1,2);
+			fn1(1,2,3);
+			
+		</script>
+		
+		
+	</body>
+</html>

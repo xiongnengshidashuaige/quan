@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 100px;
+				height: 100px;
+				background: #228B22;
+				margin-right: 10px;
+				float:left;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<button onclick ="fn('b1')">1</button>
+		<button >2</button>
+		<button>3</button>
+		<button onclick ="fn('b4')">4</button>
+		<hr />
+		<div class="wrap">
+			<div class="box" id="b1">1</div>
+			<div class="box" id="b2">2</div>
+			<div class="box" id="b3">3</div>
+			<div class="box" id="b4">4</div>
+		</div>
+		<script type="text/javascript">
+			/*var aBtn = document.getElementsByTagName('button');
+			var aBox = document.getElementsByClassName('box');
+			
+			
+			for(var i=0;i<aBtn.length;i++){
+				aBtn[i].index = i;
+				aBtn[i].onclick = function(){
+					aBox[this.index].style.display = 'none';
+				}
+			}*/
+			
+			function fn(id){
+				var target = document.getElementById(id);
+				target.style.display = 'none';
+			}
+			
+		</script>
+	</body>
+</html>

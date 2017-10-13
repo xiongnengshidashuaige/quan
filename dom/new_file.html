@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .div_list{
+        display: block;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+    }
+    .btn_list{
+        position: absolute;
+        left: 120px;
+    }
+  
+    </style>
+    <script type="text/javascript">
+    window.onload = function(){
+      
+  
+    function div_elem(i){
+        return '<div id="d'+i+'" class="div_list"><input type="button" value="删除'+i+'" id="input'+i+'" class="btn_list"></div>';
+    }
+      
+    function add_div(){
+  
+        var odiv_add = document.getElementById('div_add');
+        var obtn1 = document.getElementById('btn1');
+        var count1 = 0;
+ 
+  
+        obtn1.onclick = function(){
+           var div_data = '';
+           count1++;
+           if (count1<=10) {
+           for(var i = 0; i<count1; i++){
+             div_data += div_elem(i);
+            }
+           }else{
+             alert('不能再增加了');
+             return;
+           }
+        odiv_add.innerHTML =  div_data;
+        function btn_delete(){
+             var obtn_list = document.getElementsByClassName('btn_list');
+  
+        for(var j = 0; j<obtn_list.length;j++){
+            (function(j){
+                obtn_list[j].onclick = function(){
+                    count1--;
+                    odiv_add.removeChild(odiv_add.childNodes[j]);
+                    btn_delete();
+                }
+            })(j);
+        }
+        }
+        
+        btn_delete()
+        }
+  
+    }
+      
+    add_div();
+  
+  }
+          
+    </script>
+      
+</head>
+<body>
+    <div id="div_add"></div>
+    <input type="button" id="btn1" value="增加" />
+      
+</body>
+</html>

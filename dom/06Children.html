@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p>我是一个段落</p>
+			
+			<ul id="ul1" class="list" name="mylist" data="111111">
+				
+				<li>00001 <span>我是span中的内容</span></li>
+				
+				<li>00002</li>
+				
+				<li>00003</li>
+				<!--<p>11111111111</p>--> <!--非法嵌套的子节点-->
+				
+				<li>00004</li>
+				
+			</ul>
+			
+		</div>
+		
+		<script type="text/javascript">
+			var oUl = document.getElementById("ul1");
+			//console.log(oUl.children);
+			
+			for(var i=0;i<oUl.children.length;i++){
+				console.log(oUl.children[i]);
+				
+				oUl.children[i].style.background = 'green';
+			}
+			
+			
+		</script>
+	</body>
+</html>
+<!--
+	E.Children 只读 属性 子节点列表集合
+	标准/非标准： 只包含 元素类型的节点
+				但 在非标准下 不包含 非法嵌套的子节点
+	推荐使用
+-->

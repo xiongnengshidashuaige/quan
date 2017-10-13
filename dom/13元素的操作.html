@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.pa {
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			
+		</div>
+		<button id="btn">创建</button>
+		<script type="text/javascript">
+			var oBtn = document.getElementById("btn");
+			
+			oBtn.onclick = function(){
+				var oWrap =document.getElementById("wrap");
+				
+				//创建元素
+				var oP = document.createElement('p');
+				console.log(oP);
+				
+				oP.innerText = "我是一个段落";
+				//设置属性
+				oP.setAttribute('class','pa');
+				//oWrap.innerHTML = oP.innerHTML;
+				
+				//追加子元素
+				oWrap.appendChild(oP)
+			}
+		</script>
+		
+	</body>
+</html>

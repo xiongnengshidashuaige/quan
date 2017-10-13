@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//js 是函数级别的作用域，在内部的变量 内部都能访问；
+			//外部不能访问内部，内部可以访问外部
+			
+			var a = 100 ;
+			
+			function fn1(){
+				console.log(a);
+				var a = 200;
+				
+				var b = 1000;
+			}
+			
+			//fn1();//undefined
+			
+			//alert(b);// b is not defined
+			
+			//闭包：闭包就是能够读取其他函数内部变量的函数
+			function t1(){
+				var j;
+				j = 100;
+				var k = 10;
+				return function(){
+					return k;
+				}
+			}
+			
+			
+			var k = t1()();
+			alert(k);
+		</script>
+	</body>
+</html>

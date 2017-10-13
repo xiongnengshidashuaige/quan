@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		  <style type="text/css">
+        ul {
+            /*display: block;
+            float:left;*/
+        }
+
+            ul li {
+                width: 150px;
+                height: 150px;
+                line-height: 150px;
+                border: 1px solid gray;
+                float: left;
+                margin-left: 10px;
+                margin-top: 10px;
+                list-style-type: none;
+                text-align: center;
+                font-size: 20px;
+            }
+
+        #btnStart {
+            width: 100px;
+            height: 30px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+    </style>
+	</head>
+	<body>
+		 <div>
+        <ul>
+            <li>click me!</li>
+            <li>click me!</li>
+            <li>click me!</li>
+            <li>click me!</li>
+        </ul>
+        <ul>
+            <li>click me!</li>
+            <li>click me!</li>
+            <li>click me!</li>
+            <li>click me!</li>
+        </ul>
+        <ul>
+            <li>click me!</li>
+            <li>click me!</li>
+            <li>click me!</li>
+            <li>click me!</li>
+        </ul>
+        <ul>
+            <li>click me!</li>
+            <li>click me!</li>
+            <li>click me!</li>
+            <li>click me!</li>
+        </ul>
+        <ul>
+            <li>click me!</li>
+            <li>click me!</li>
+            <li>click me!</li>
+            <li>click me!</li>
+        </ul>
+    </div>
+
+    <input id="btnStart" type="button" value="Start" />
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		  var numArray = new Array();
+
+        var personNum = 30;
+        $(function () {
+            for (var i = 0; i < personNum; i++) {
+                numArray[i] = i;
+            }
+
+            $("li").click(function () {
+                var n = Math.floor(Math.random() * numArray.length + 1);  //生成随机数
+                $(this).text(numArray[n]);
+                numArray.splice(n, 1);  //移除随机数
+
+            });
+
+            $("#btnStart").click(function () {
+                var totalArray = new Array();
+                $("li").each(function (i, v) {
+                    totalArray[i] = v.innerText;
+                });
+
+                var n = Math.floor(Math.random() * totalArray.length + 1) - 1;  //生成随机数
+                this.value = totalArray[n];
+
+                $("li").each(function (i, v) {
+                    if (v.innerText == $("#btnStart").val()) {
+                        this.style.background = "red";
+                    }
+                    else
+                    {
+                        this.style.background = "white";
+                    }
+                });
+
+            });
+        });
+
+
+    </script>
+	</script>
+</html>

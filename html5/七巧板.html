@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="" height=""></canvas>
+		<script type="text/javascript">
+    var tangram = [
+        {
+            f:[{x: 0,y: 0},{x: 800, y: 0},{x: 400, y: 400}],
+            color: "#FEF734",
+        },
+        {
+            f:[{x: 0,y: 0},{x: 200, y: 200},{x: 0, y: 400}],
+            color: "#224AFB",
+        },
+        {
+            f:[{x: 400,y: 0},{x: 300, y: 100},{x: 400, y: 200}],
+            color: "#A82F24",
+        },
+        {
+            f:[{x: 200,y: 200},{x: 300, y: 100},{x: 400, y: 200},{x: 300, y: 300}],
+            color: "#141D71",
+        },
+        {
+            f:[{x: 200,y: 200},{x: 100, y: 300},{x: 300, y: 300}],
+            color: "#F17E4D",
+        },
+        {
+            f:[{x: 100,y:  300},{x: 300, y: 300},{x: 200, y: 400},{x: 0, y: 400}],
+            color: "##EC4F93",
+        },
+        {
+            f:[{x: 400,y: 200},{x: 200, y: 400},{x: 400, y: 400}],
+            color: "#6CF8FC",
+        },
+    ];
+    window.onload = function(){
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = 400;
+        canvas.height = 400;
+        for(var i = 0; i< tangram.length; i++){
+            ctx.beginPath();
+            ctx.moveTo(tangram[i].f[0].x, tangram[i].f[0].y);
+            for (var j= 1; j < tangram[i].f.length; j++){
+                ctx.lineTo(tangram[i].f[j].x, tangram[i].f[j].y);
+            }
+            ctx.closePath();
+            ctx.fillStyle = tangram[i].color;
+            ctx.fill();
+            ctx.lineWidth = 10;
+            ctx.stroke();
+        }
+        //重绘最外层边框
+        ctx.lineWidth = 20;
+        ctx.strokeRect(0,0,400,400);
+    }
+
+    </script>
+	</body>
+</html>

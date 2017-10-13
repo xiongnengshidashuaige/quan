@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		问：<input type="text" onkeypress="showHint(this.value)"/>
+		<hr />
+		答：
+		
+		<script type="text/javascript">
+			
+			function showHint(str){
+				if(event.keyCode == 13){
+					Send(str);
+				}
+			}
+			
+			function Send(str){
+				var xhr;
+				if(window.XMLHttpRequest){
+					xhr = new XMLHttpRequest();
+				}else{
+					xhr = new ActiveXObject('Microsoft.XMLHTTP')
+				}
+			
+				var url = 'http://www.tuling123.com/openapi/api?key=58293807907748a5b4bda52e058943b2';
+				//url = url+"&code="+'100000';
+				url = url+"&info="+str;
+				url = url+'&userid=1234';
+			
+				xhr.open('post',url,true);
+				xhr.send();
+			
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState == 4 && xhr.status ==200 ){
+						console.log(xhr.responseText);
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>

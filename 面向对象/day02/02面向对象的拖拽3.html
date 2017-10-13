@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#div1{
+				width: 100px;
+				height: 100px;
+				background: #FF0000;
+				position: absolute;
+				left:0;
+				top:0;
+			}
+			#div2{
+				width: 50px;
+				height: 50px;
+				background: blue;
+				position: absolute;
+				right:0;
+				top:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<div id="div2"></div>
+		<script type="text/javascript">
+			window.onload = function(){//创建 对象
+				var drag1 = new Drag('div1');
+				drag1.init();
+				
+				var drag2 = new Drag('div2');
+				drag2.init();
+			}
+			
+			function Drag(id){//构造函数
+				this.oDiv = document.getElementById(id);
+				this.disX = 0;
+				this.disY = 0;
+			}
+			
+			Drag.prototype.init = function(){
+				var _this = this;
+				this.oDiv.onmousedown = function(){
+					_this.fnDown();
+				}
+			}
+			
+			Drag.prototype.fnDown = function(ev){
+				var ev =  ev || window.event;
+				var _this = this;	
+				this.disX = ev.clientX - this.oDiv.offsetLeft;
+				this.disY = ev.clientY - this.oDiv.offsetTop;
+				document.onmousemove = function(){
+					_this.fnMove();
+				}
+				
+				document.onmouseup = function(){
+					_this.fnUp();
+				}
+				return false;
+			}
+			Drag.prototype.fnMove = function(ev){
+				var ev =  ev || window.event;
+				this.oDiv.style.left = ev.clientX - this.disX+'px';
+				this.oDiv.style.top = ev.clientY - this.disY+'px';
+			}
+			Drag.prototype.fnUp = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+			}
+		</script>
+	</body>
+</html>

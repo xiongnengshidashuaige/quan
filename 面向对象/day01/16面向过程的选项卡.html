@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.wrap{width: 600px;height: 400px;overflow: hidden;}
+			.box{width: 600px;height: 400px;background:red;font:100px/400px "微软雅黑";text-align: center;position: absolute;display: none;}
+		</style>
+	</head>
+	<body>
+		<div id="tab1">
+			<input type="button" value="选项一" />
+			<input type="button" value="选项二" />
+			<input type="button" value="选项三" />
+			<div class="wrap">
+				<div class="box">1</div>
+				<div class="box">2</div>
+				<div class="box">3</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//第一步 获取元素
+			var aBtn = document.querySelectorAll('input');
+			var aBox = document.querySelectorAll('.box');
+			
+			//添加事件
+			for(var i = 0 ;i < aBtn.length; i ++){
+				//0 1 2
+				aBtn[i].index = i;//自定义属性
+				aBtn[i].onclick = function(){
+					aBox[this.index].style.display = 'block';
+				}
+			}
+			
+			var timer = null;
+			var n =  0;
+			setInterval(function(){
+				for(var j = 0;j<aBtn.length;j++ ){
+					aBtn[j].style.background = '';
+					aBox[j].style.display = 'none';
+				}
+				n++;
+				if(n>aBtn.length-1){
+					n = 0;	
+				}
+				aBtn[n].style.background = 'red';
+				aBox[n].style.display = 'block';
+			},1000);
+		</script>
+	</body>
+</html>

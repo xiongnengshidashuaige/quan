@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<input type="button" value="隐藏" />
+		<hr />
+		<div></div>
+		
+		<script type="text/javascript">
+			$(function(){
+				var on = true;
+				$('input').click(function(){
+					
+					if(on){
+						$(this).attr('value','显示');
+						$('div').hide();
+					}else{
+						$(this).attr('value','隐藏');
+						$('div').show();
+					}
+					
+					on = !on;
+					
+				});
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//创建 Number 对象的语法：
+			//var myNum=new Number(value);
+			//var myNum=Number(value);//可以将字符串string 转为 数字 number
+			/*
+			 参数
+			参数 value 是要创建的 Number 对象的数值，或是要转换成数字的值。
+			返回值
+			当 Number() 和运算符 new 一起作为构造函数使用时，它返回一个新创建的 Number 对象。
+			如果不用 new 运算符，把 Number() 作为一个函数来调用，
+			它将把自己的参数转换成一个原始的数值，并且返回这个值（如果转换失败，则返回 NaN）。
+			 * 
+			 * 
+			 * */
+			
+			
+			
+			var n1 = new Number(10);
+			var n2 = Number(10);
+			var n3 = 10;
+			console.log(typeof n1);//object
+			console.log(typeof n2);//number
+			console.log(typeof n3);//number
+			
+			var str = '10';
+			console.log(typeof str);//string
+			var s_n = Number(str);
+			console.log(typeof s_n);//number
+			
+			//构造函数  new 
+			//普通函数
+			
+		</script>
+	</body>
+</html>

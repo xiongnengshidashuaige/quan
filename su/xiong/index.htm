@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="{dede:global.cfg_templets_skin/}/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+    	<div class="container">
+	    	<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="/">
+			      	<img src="img/logo.png"/>
+			      </a>
+			    </div>
+			
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			        <li><a href="index.html">首页 <span class="sr-only">(current)</span></a></li>
+			        <li class="active"><a href="product.html">产品中心</a></li>
+			        <li><a href="news.html">新闻中心</a></li>
+			        <li><a href="about.html">联系我们</a></li>
+			      </ul>
+			      
+			      <div class="nav navbar-nav navbar-right">
+			        <!--<a href="#" class="btn btn-success" data-toggle="modal" data-target="#login">登录</a>
+			       	<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#register">注册</a>-->
+			       	<a href="" style="font-size:30px;">taoge</a>
+			      </div>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+    	</div>
+    </header>
+    
+    <!--轮播-->
+	<div class="banner container">
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		  </ol>
+		
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		      <a href="">
+			     <img src="img/banner1.jpg" alt="..." class="img-responsive">
+		      </a>
+		    </div>
+		    <div class="item">
+		       <a href="">
+			     <img src="img/banner1.jpg" alt="..." class="img-responsive">
+		      </a>
+		    </div>
+		    <div class="item">
+		       <a href="">
+			     <img src="img/banner1.jpg" alt="..." class="img-responsive">
+		      </a>
+		    </div>
+		  </div>
+		
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+	</div>
+	<!--热销汽车-->
+	<div class="hot-car container">
+		<div class="row">
+		  <div class="col-sm-6 col-md-3">
+		    <div class="thumbnail">
+		      <img src="img/p1.jpg" alt="...">
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		      </div>
+		    </div>
+		    <a href="" class="mask"></a>
+		  </div>
+		  <div class="col-sm-6 col-md-3">
+		    <div class="thumbnail">
+		      <img src="img/p2.jpg" alt="...">
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-3">
+		    <div class="thumbnail">
+		      <img src="img/p3.jpg" alt="...">
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		      </div>
+		    </div>
+		  </div>
+		   <div class="col-sm-6 col-md-3">
+		    <div class="thumbnail">
+		      <img src="img/p1.jpg" alt="...">
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-3">
+		    <div class="thumbnail">
+		      <img src="img/p2.jpg" alt="...">
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-3">
+		    <div class="thumbnail">
+		      <img src="img/p3.jpg" alt="...">
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-3">
+		    <div class="thumbnail">
+		      <img src="img/p4.jpg" alt="...">
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-3">
+		    <div class="thumbnail">
+		      <img src="img/p5.jpg" alt="...">
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<!--新闻中心-->
+	<div class="news container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="panel panel-primary">
+				  <div class="panel-heading">促销信息</div>
+				  <div class="panel-body">
+				    <p><a href="details.html">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				  </div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-primary">
+				  <div class="panel-heading">试驾感受</div>
+				  <div class="panel-body">
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				  </div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-primary">
+				  <div class="panel-heading">新闻资讯</div>
+				  <div class="panel-body">
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				    <p><a href="">最近很开心</a><span>	—— 2017-09-09</span></p>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--底部-->
+	<footer>
+		<p>《BootStrap响应式开发》</p>
+		<p>  &copy; 2017 TaoGe - 渝ICP证0123456789号</p>
+	</footer>
+	
+	
+
+
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">登录</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+		  <div class="form-group">
+		    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+		    <div class="col-sm-10">
+		      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+		    <div class="col-sm-10">
+		      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputYan" class="col-sm-2 control-label">验证码</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="inputYan" placeholder="验证码">
+		      <img src="img/yan.png" alt="" />
+		    </div>
+		  </div>
+		
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-default">Sign in</button>
+		    </div>
+		  </div>
+		</form>
+      </div>
+  
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">注册</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+		  <div class="form-group">
+		    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+		    <div class="col-sm-10">
+		      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+		    <div class="col-sm-10">
+		      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword4" class="col-sm-2 control-label">Password</label>
+		    <div class="col-sm-10">
+		      <input type="password" class="form-control" id="inputPassword4" placeholder="确认密码">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputYan" class="col-sm-2 control-label">验证码</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="inputYan" placeholder="验证码">
+		      <img src="img/yan.png" alt="" />
+		    </div>
+		  </div>
+		 
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-default">Sign up</button>
+		    </div>
+		  </div>
+		</form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

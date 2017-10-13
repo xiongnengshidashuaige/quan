@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var myDay = new Date();
+			var Year = myDay.getFullYear();
+			var Month = myDay.getMonth();//月份 是从0开始的
+			var Day = myDay.getDate();
+			var Week = myDay.getDay();
+			
+			var Hour = myDay.getHours();
+			var Min = myDay.getMinutes();
+			var Sec = myDay.getSeconds();
+			
+			
+			console.log('今天是：'+Year+'年'+(Month+1)+'月'+Day+'日,星期'+Week+"    "+Hour+':'+Min+':'+Sec);
+			console.log(myDay.getTime());//getTime() 返回从 1970 年 1 月 1 日至今的毫秒数。
+		</script>
+	</body>
+</html>

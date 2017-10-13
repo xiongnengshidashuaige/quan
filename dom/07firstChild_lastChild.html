@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<p>我是一个段落</p>
+			
+			<ul id="ul1" class="list" name="mylist" data="111111">
+				
+				<li>00001</li>
+				
+				<li>00002</li>
+				
+				<li>00003</li>
+				
+				<li>00004</li>
+				
+				<li>00005</li>
+				
+				<li>00006</li>
+				
+			</ul>
+			
+		</div>
+		
+		<script type="text/javascript">
+			var oUl = document.getElementById("ul1");
+			console.log(oUl.firstChild);
+			console.log(oUl.firstElementChild);
+			
+//			if(oUl.firstElementChild){
+//				oUl.firstElementChild.style.background = 'red';
+//			}
+//			
+//			if(oUl.firstChild){
+//				oUl.firstChild.style.background = 'red';
+//			}
+			
+			var oFirst = oUl.firstElementChild || oUl.firstChild;
+			oFirst.style.color = "red";
+			
+			
+			var oLast =  oUl.lastElementChild || oUl.lastChild;
+			oLast.style.color = "green";
+		</script>
+	</body>
+</html>
+<!--
+	E.firstChild:第一个子节点
+	
+	标准下：firstChild 会包含文本类型的节点
+	非标准下：只包含 元素节点
+	
+	E.lastChild:最后一个子节点
+	标准下：firstChild 会包含文本类型的节点
+	非标准下：只包含 元素节点
+	
+-->

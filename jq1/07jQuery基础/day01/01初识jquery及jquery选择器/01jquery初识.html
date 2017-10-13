@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				background: #000;
+				/*transition: all 5s;*/
+			}
+		</style>
+	</head>
+	<body>
+		<button>按钮</button>
+		<hr />
+		<div class="box"></div>	
+		
+		<script type="text/javascript">
+//			var oBtn = document.querySelector('button');
+//			var oBox = document.querySelector('.box');
+//			
+//			oBtn.onmouseover = function(){
+//				oBox.style.display = 'none'
+//			}
+//			
+//			oBtn.onmouseout = function(){
+//				oBox.style.display = 'block'
+//			}
+
+			$('button').hover(function(){
+				$('.box').hide(1000)
+			},function(){
+				$('.box').show(1000)
+			});
+		</script>
+	</body>
+</html>
+<!--
+	jquery是js的封装的函数库
+	
+	
+-->
+

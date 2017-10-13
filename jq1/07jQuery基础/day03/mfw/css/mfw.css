@@ -1,0 +1,94 @@
+@charset "utf-8";
+body {
+	font-family: Arial,"Lucida Grande","Microsoft Yahei","Hiragino Sans GB","Hiragino Sans GB W3",SimSun,"PingFang SC",STHeiti;
+}
+ul,ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+img {
+	display : block;
+}
+a {
+	text-decoration: none;
+}
+.clearfix {
+    *zoom:1;
+}
+
+.clearfix:after {
+    content: '';
+    clear: both;
+    height: 0;
+    display: block;
+    overflow: hidden
+}
+.w1000 {
+	width: 1000px;
+	margin: 0 auto;
+	height: 727px;
+	border: 1px solid #008000;
+}
+
+/*主题酒店*/
+.theme-hotel {
+	
+}
+.title {
+	text-align: center;
+	margin: 100px 0 25px 0;
+}
+.title h2 {
+	font-size: 24px;
+	color: #333;
+	line-height: 30px;
+	font-weight: normal;
+}
+.tab-btn {
+	
+}
+.tab-btn a {
+	display: block;
+    float: left;
+    width: 166px;
+    width: 16.66%;
+    color: #666;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+}
+.tab-btn a.on {
+	color: #ff8a00;
+    border-bottom: 3px solid #ff8a00;
+    margin-bottom: -2px;
+}
+
+
+.tab-content {
+	border-top: 1px solid #E4E4E4;
+}
+.tab-content ul {
+	
+}
+.tab-content ul li {
+	width: 318px;
+    height: 240px;
+    float: left;
+    margin: 20px 23px 0 0;
+    position: relative;
+    /*overflow: hidden;*/
+}
+.tab-content ul li:nth-child(3n) {
+	margin-right: 0;
+}
+
+.tab-content ul li .pic img {
+	width: 318px;
+	height: 240px;
+}
+/*特价酒店*/
+.tejia-hotel {
+	
+}

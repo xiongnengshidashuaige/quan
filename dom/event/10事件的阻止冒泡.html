@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.out {
+				width: 300px;
+				height: 300px;
+				border: 10px solid #ccc;
+			}
+			
+			.box {
+				width: 200px;
+				height: 200px;
+				background: #008000;
+			}
+			
+			.in {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="out">
+			<div class="box">
+				<div class="in"></div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var out = document.querySelector('.out');
+			var box = document.querySelector('.box');
+			var in1  = document.querySelector('.in');
+			
+			
+			function fn1(){
+				alert(this.className);
+			}
+			
+			out.onclick = fn1;
+			box.onclick = fn1;
+//			in1.onclick = fn1;
+
+			in1.onclick = function(ev){
+				var ev = ev || event;
+				ev.cancelBubble = true;//阻止当前事件的冒泡
+				alert(this.className);
+			}
+		</script>
+	</body>
+</html>
+<!--
+	事件的冒泡：从里 向外
+	
+	
+	
+-->

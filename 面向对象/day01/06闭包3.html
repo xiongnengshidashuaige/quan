@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function f1(){
+				var a = 100 ;
+				nAdd = function(){
+					a +=1;
+				};
+				function f2(){
+					alert(a);
+				}
+				return f2;
+			}
+			//f1();//f2()这个函数
+		//	f1()();//100
+		//	nAdd();
+		//	f1()();//100
+		
+		var res = f1();
+		res();//100
+		
+		nAdd();
+		res();//101
+		</script>
+	</body>
+</html>

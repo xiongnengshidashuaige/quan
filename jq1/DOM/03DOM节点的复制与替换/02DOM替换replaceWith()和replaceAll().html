@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+    .right div {
+        background: yellow;
+    }
+    </style>
+    <script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".bt1").on('click', function() {
+		        //找到内容为第二段的p元素
+		        //通过replaceWith删除并替换这个节点
+		        $(".right > div:first p:eq(1)").replaceWith('<a style="color:red">replaceWith替换第二段的内容</a>')
+		   });
+		   
+		    //找到内容为第六段的p元素
+		    //通过replaceAll删除并替换这个节点
+		    $(".bt2").on('click', function() {
+		        $('<a style="color:red">replaceAll替换第六段的内容</a>').replaceAll('.right > div:last p:last');
+		    })
+		});
+	</script>
+<!--
+.replaceWith( newContent )：用提供的内容替换集合中所有匹配的元素并且返回被删除元素的集合
+.replaceAll( target ) ：用集合的匹配元素替换每个目标元素
+
+总结：
+.replaceAll()和.replaceWith()功能类似，主要是目标和源的位置区别
+.replaceWith()与.replaceAll() 方法会删除与节点相关联的所有数据和事件处理程序
+.replaceWith()方法，和大部分其他jQuery方法一样，返回jQuery对象，所以可以和其他方法链接使用
+.replaceWith()方法返回的jQuery对象引用的是替换前的节点，而不是通过replaceWith/replaceAll方法替换后的节点
+-->
+</head>
+
+<body>
+    <h2>replaceWith()和replaceAll()</h2>
+    <div class="left">
+        <input type="button" class="bt1" value="点击,通过replaceWith替换内容"/>
+        <input type="button" class="bt2" value="点击,通过replaceAll替换内容"/>
+    </div>
+    <div class="right">
+        <div>
+            <p>第一段</p>
+            <p>第二段</p>
+            <p>第三段</p>
+        </div>
+        <div>
+            <p>第四段</p>
+            <p>第五段</p>
+            <p>第六段</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var name = 'hello';
+			console.log(window.name);//this==window
+			var obj = {
+				name : 'world',
+				getNameFunc: function(){
+					var that = this;
+					return function(){
+						return this+':::'+that.name;
+					};
+				}
+			}
+			
+			var fn = obj.getNameFunc();
+			
+			console.log(fn);
+			console.log(fn());
+		</script>
+	</body>
+</html>

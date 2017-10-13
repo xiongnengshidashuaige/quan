@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+	<student>
+		<id>001</id>
+		<name>admin</name>
+		<age>10</age>
+		<sex>男</sex>
+		<hobby>打篮球</hobby>
+	</student>
+	<student>
+		<id>002</id>
+		<name>admin</name>
+		<age>10</age>
+		<sex>男</sex>
+		<hobby>打篮球</hobby>
+	</student>
+	<student>
+		<id>003</id>
+		<name>admin</name>
+		<age>10</age>
+		<sex>男</sex>
+		<hobby>打篮球</hobby>
+	</student>
+	<student>
+		<id>004</id>
+		<name>admin</name>
+		<age>10</age>
+		<sex>男</sex>
+		<hobby>打篮球</hobby>
+	</student>
+</class>

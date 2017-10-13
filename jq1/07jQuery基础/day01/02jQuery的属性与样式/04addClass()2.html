@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 100px;
+				height: 100px;
+				background: #0000FF;
+			}
+			.red{
+				color:red;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<div>123456789</div>
+		
+		
+		<script type="text/javascript">
+//			$(document).click(function(){
+//				$('div').addClass('box red')
+//			});
+//			$(document).dblclick(function(){
+//				$('div').removeClass('box red')
+//			});
+
+			$(document).click(function(){
+				$('div').toggleClass('box red')
+			});
+		</script>
+		
+	</body>
+</html>

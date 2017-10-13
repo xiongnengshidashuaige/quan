@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+		div,span,p{
+			width: 140px;
+			height: 140px;
+			margin: 5px;
+			border:1px solid #000;
+			float:left;
+			font-size:18px;
+			font-family: verdana; 
+		}
+		div.mini{
+			width: 55px;
+			height: 55px;
+			background-color: #aaa;
+			font-size:12px;
+		}
+		div.hide{
+			display: none;
+		}
+	</style>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*基本选择器
+		 #id
+		 .class
+		 element
+		 *
+		 selector1,selector2,selectorN
+		 * */
+		
+		$(document).ready(function(){
+			//id
+			$('#one').css('background','red');
+			//class
+			$('.mini').css('background','green');
+			//element
+			$('div').css('color','orangered');
+			//*
+			$('*').css('font-size','14px');
+			//selector1,selector2,selectorN
+			$('#two,span').css('background','deeppink');
+			//交集选择器
+			$('div#one').css('background','darkgreen');
+		});
+	</script>
+</head>
+<body>
+	<div class="one" id="one">
+		id为one，class为one的div
+		<div class="mini">class为mini</div>
+	</div>
+	<div class="one" id="two" title="test">
+		id为two，class为one的div,title为test的div
+		<div class="mini" title="other">class为mini,title为other</div>
+		<div class="mini" title="test">class为mini,title为test</div>
+	</div>
+	<div class="one" >
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini"></div>
+	</div>
+	<div class="one" >
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini" title="test">class为mini,title为test</div>
+	</div>
+	<div style="display:none;" class="one">style的display为none的div</div>
+	<div class="hide">css为hide的div</div>
+	<div>包含input的type为hidden的div<input type="hidden" size="8"/></div>
+	<span id="mover">正在执行动画的 span 元素</span>
+</body>
+</html>

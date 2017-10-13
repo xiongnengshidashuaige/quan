@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			ul {
+				border:1px solid #ccc;
+				position: absolute;
+				left:0;
+				top:0;
+				display: none;
+			}
+			ul li {
+				list-style: none;
+				border-bottom: 1px solid #FF0000;
+				padding: 10px;
+			}
+			
+			ul li:hover {
+				background: #FFC0CB;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="list">
+			<li>菜单01</li>
+			<li>菜单02</li>
+			<li>菜单03</li>
+			<li>菜单04</li>
+			<li>菜单05</li>
+			<li id="alert">菜单06</li>
+		</ul>
+		
+		<script type="text/javascript">
+			var list =document.getElementById("list");
+			
+			document.oncontextmenu =   function(ev){
+				var ev = ev || event;
+				list.style.display = 'block';
+				list.style.left = ev.clientX + 'px';
+				list.style.top = ev.clientY + 'px';
+				
+				return false;
+			}
+			
+			document.onclick = function(){
+				list.style.display = 'none';
+			}
+			
+			var a = document.getElementById("alert");
+			a.addEventListener('click',function(){
+				//alert('哈哈哈：完美');
+				window.location.href = "01click.html";
+			})
+		</script>
+	</body>
+</html>

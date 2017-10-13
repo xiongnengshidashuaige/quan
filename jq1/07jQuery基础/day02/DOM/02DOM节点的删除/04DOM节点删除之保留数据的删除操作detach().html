@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+    <style type="text/css">
+	    p {
+	        color: red;
+	    }
+    </style>
+    <script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('p').click(function(e) {
+		        alert(e.target.innerHTML)
+		    })
+		    var p;
+		    $("input:first").click(function() {
+		        if (!$("p").length) return; //去重
+		        //通过detach方法删除元素
+		        //只是页面不可见，但是这个节点还是保存在内存中
+		        //数据与事件都不会丢失
+		        p = $("p").detach()
+		    });
+		
+		    $("input:last").click(function() {
+		        //把p元素在添加到页面中
+		        //事件还是存在
+		        $("body").append(p);
+		    });
+		});
+	</script>
+</head>
+
+<body>
+    <p>P元素1，默认给绑定一个点击事件</p>
+    <p>P元素2，默认给绑定一个点击事件</p>
+	<input type="button" value="点击删除 p 元素" />
+	<input type="button" value="点击移动 p 元素" />
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.c {
+				width: 50px;
+				height: 50px;
+				background: red;
+				border-radius: 50%;
+				position: absolute;
+				left:0;
+				top;0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="c"></div>
+		
+		
+		<script type="text/javascript">
+			var c = document.querySelector('.c');
+			
+			c.onmousedown = function(){
+				
+				document.onmousemove = function(ev){
+					var ev = ev || event ;
+					c.style.left = ev.clientX+'px';
+					c.style.top = ev.clientY+'px';
+					
+				}
+				
+				document.onmouseup = function(){
+					document.onmousemove = null;
+				}
+				
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

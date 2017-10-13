@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../lib/jquery-1.12.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("div").delegate("button","click",fn);
+				
+				function fn(){
+				  $("p").slideToggle();
+				}
+//				$('button').click(function(){
+//					 $("p").slideToggle();
+//				});
+
+
+				//$("div").undelegate();
+				$("div").undelegate("button","click",fn);
+			});
+		</script>
+	</head>
+	<body>
+		<div style="background-color:red">
+			<p>这是一个段落。</p>
+			<button>请点击这里</button>
+		</div>
+	</body>
+</html>

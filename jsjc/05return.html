@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<!--	<input type="text" />
+		<input type="text" />--> 
+		
+		<script type="text/javascript">
+			var a = 1;
+			var b = 2;
+			
+			
+			//(a+b)*5+(a-b)*5
+			//(1+2)*5+(1-2)*5
+			
+			
+			function fn1(a,b){
+				//10*(10-20)
+				(function(){
+					a++;
+					console.log(a);//11
+					b--;
+					console.log(b);//19
+					
+					console.log(a-b);//-8
+					return a-b;
+					
+				})();
+				return  (a-b)*a;//-8*11
+			}
+			
+			console.log(fn1(10,20));
+			console.log(fn1(88,25));
+			console.log(fn1(88999,299995));
+			
+			
+			// return 后面的语句 不会执行
+		</script>
+	</body>
+</html>

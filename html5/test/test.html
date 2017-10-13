@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a1">
+			
+		</div>
+		<button>sdfsd</button>
+	</body>
+	
+	<script type="text/javascript">
+		var btn = document.querySelector('button')
+		var d = document.querySelector('div')
+		
+		var on = true;
+		btn.onclick = function(){
+			if(on){
+				d.style.background = 'red';
+			}else {
+				d.style.background = 'black';
+				
+			}
+			on = !on;
+		}
+		
+		
+	</script>
+</html>

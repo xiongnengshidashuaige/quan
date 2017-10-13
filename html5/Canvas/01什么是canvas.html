@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<canvas id="demo" width="300" height="200">
+			<p>你的浏览器不支持</p>
+		</canvas>
+		
+		<script type="text/javascript">
+			// 找到 canvas 元素
+			var canvas = document.getElementById("demo");
+			
+			//判断 浏览器 是否支持 canvas
+			if(canvas.getContext){
+				alert('你的浏览器支持canvas');
+			}else{
+				alert('你的浏览器不支持canvas');
+			}
+			
+			//创建context 对象（渲染上下文）
+			var ctx = canvas.getContext('2d');
+			
+			//绘制一个矩形
+			ctx.fillStyle = 'red';
+			ctx.fillRect(0,0,300,200);
+		</script>
+	</body>
+</html>
+<!--
+	canvas 是HTML5新增的组件，它就像一块幕布，可以通过js在上面绘制各种图标、动画等。
+	
+	由于浏览器对HTML5	标准支持不一致，所以 通常在 <canvas></canvas>内部添加一些 说明性的HTML代码，
+	如果浏览器支持canvas ,它将忽略  <canvas></canvas>内部的HTML，如果不支持，它将显示 <canvas></canvas>内部的HTML
+	
+-->

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.wrap{
+				width: 1200px;
+				height: 600px;
+				border:5px solid #ccc;
+				/*position: relative;*/
+			}
+			.container {
+				width: 600px;
+				height: 400px;
+				border: 2px solid green;
+				margin-left: 300px;
+			/*	position: relative;*/
+			}
+			.box {
+				width: 100px;
+				height: 100px;
+				background: red;
+				/*position: absolute;
+				left:200px;
+				top:0;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="container">
+				<div class="box" id="box"></div>	
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			//E.offsetLeft 当前元素到 定位 父级的距离（偏移值）
+			/*
+			 如果没有定位父级：
+			 offsetParent -> body
+			 offsetLeft ->html
+			 
+			 
+			 如果有定位的父级：
+			 IE7以下：如果自己没有定位，那么offsetLeft[Top]是到body的距离
+			 		如果自己有定位，那么就是定位到父级的距离
+			 其他：定位到父级的距离
+			 * */
+			
+		
+			var oBox = document.getElementById('box');
+			
+			console.log(oBox.offsetLeft);
+			console.log(oBox.offsetTop);
+			console.log(oBox.offsetParent);
+		</script>
+	</body>
+</html>

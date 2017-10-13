@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="#one">one</a>
+		<a href="#two">two</a>
+		<a href="#three">three</a>
+		<hr />
+		<h1 id="one">one</h1>
+		<script type="text/javascript">
+			for(var i = 0;i<50;i++){
+				document.write(i+'<br/>');
+			}
+		</script>
+		
+		<hr />
+		
+		<h1 id="two">two</h1>
+		<hr />
+		<script type="text/javascript">
+			for(var i = 51;i<100;i++){
+				document.write(i+'<br/>');
+			}
+		</script>
+		<hr />
+		<h1 id="three">three</h1>
+		<script type="text/javascript">
+			for(var i = 101;i<150;i++){
+				document.write(i+'<br/>');
+			}
+		</script>
+		<h1><a href="#one">返回顶部</a></h1>
+		
+		
+		<script type="text/javascript">
+			var a = document.querySelectorAll('a');
+			for(var i=0;i<a.length;i++){
+				a[i].onclick = function(){
+					console.log(window.location.hash);
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

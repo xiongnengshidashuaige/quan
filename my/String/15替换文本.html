@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<button>替换</button>
+		<hr />
+		<p>今天好！明天好！</p>
+		<script type="text/javascript">
+			var btn = document.querySelector('button');
+			btn.onclick  = function(){
+				var txt = document.querySelector('input').value;
+				var oP = document.querySelector('p');
+				var str = oP.innerHTML;
+				
+				var newstr = str.replace(/好/g,txt);
+				oP.innerHTML = newstr;
+			}
+		</script>
+	</body>
+</html>

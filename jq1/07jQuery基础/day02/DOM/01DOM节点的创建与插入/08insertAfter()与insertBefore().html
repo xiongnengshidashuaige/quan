@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+		.test1 {
+	        background: #bbffaa;
+	    }
+	    
+	    .test2 {
+	        background: yellow;
+	    }
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#btn1').click(function(){
+			 	//在test1元素前后插入集合中每个匹配的元素
+		        //不支持多参数
+		        $('<p style="color:red">测试insertBefore方法增加</p>', '<p style="color:red">多参数</p>').insertBefore($(".test1"))
+			});
+			
+			$('#btn2').click(function(){
+				//在test2元素前后插入集合中每个匹配的元素
+		        //不支持多参数
+		        $('<p style="color:red">测试insertAfter方法增加</p>', '<p style="color:red">多参数</p>').insertAfter($(".test2"))
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>通过insertBefore与insertAfter添加元素</h2>
+	<input type="button" value="点击通过jQuery的insertBefore添加元素" id="btn1" />
+    <input type="button" value="点击通过jQuery的insertAfter添加元素" id="btn2"/>
+    <div class="box">
+        <p class="test1">测试insertBefore,不支持多参数</p>
+    </div>
+    <div class="box">
+        <p class="test2">测试insertAfter,不支持多参数</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*基本过滤选择器
+		 :first 选取第一个元素     单个元素   
+		 :last 选取最后一个元素   单个元素   
+		 :not(selector) 去除所有与给定选择器匹配的元素  集合元素    $('input:not(.myClass)')选取所有class不是myClass的<input>元素
+		 :even 选取索引是偶数的所有元素，索引从0开始  集合元素
+		 :odd  选取索引是奇数的所有元素，索引从0开始
+		 :eq(index)选取索引等于index的元素
+		 :gt(index) 选取索引大于index的元素
+		 :lt(index)选取索引小于index的元素
+		 :header 选取所有的标题元素，例如：h1 h2 h3
+		 :animated 选取当前正在执行动画的所有元素
+		 * 
+:eq(), :lt(), :gt(), :even, :odd 用来筛选他们前面的匹配表达式的集合元素，根据之前匹配的元素在进一步筛选，注意jQuery合集都是从0开始索引
+gt是一个段落筛选，从指定索引的下一个开始，gt(1) 实际从2开始
+		 * */
+	</script>
+</head>
+<body>
+	<ul class="ulList">
+	    <li class="one">01男嘉宾</li>
+	    <li>02男嘉宾</li>
+	    <li>03男嘉宾</li>
+	    <li>04男嘉宾</li>
+	    <li>05男嘉宾</li>
+	    <li>06男嘉宾</li>
+	    <li>07男嘉宾</li>
+	    <li>08男嘉宾</li>
+	    <li>09男嘉宾</li>
+	    <li>10男嘉宾</li>
+	</ul>
+	<h1>Header 1</h1>
+	<p>Contents 1</p>
+	<h2>Header 2</h2>
+	<p>Contents 2</p>
+	
+	<button id="run">Run</button>
+	<div style="width:100px;height:100px;border:1px solid red;position:absolute;"></div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+//			$('ul li:first').css('background','red');
+//			$('ul li:last').css('background','green');
+//			$('ul li:even').css('background','red');
+//			$('ul li:odd').css('background','green');
+//			$('li:not(.one)').css('background','deeppink');
+//			$('ul li:eq(5)').css('background','green');
+//			$('ul li:gt(5)').css('background','pink');
+//			$('ul li:lt(5)').css('background','blue');
+//			$(':header').css('background','blue');
+//			
+			$("#run").click(function(){
+			   $("div:not(:animated)").animate({ left: "+=20" }, 100);
+			});
+		});
+</script>
+</body>
+</html>

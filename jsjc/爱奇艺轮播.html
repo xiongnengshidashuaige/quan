@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.imgbox{
+				height: 410px;
+				width: 1500px;
+				margin: 0 auto;
+				position: relative;
+			}
+			ul{
+				position: absolute;
+				right: 0;
+				top: 0;
+				background: rgba(0,0,0,0.8);
+			}
+			li{
+				list-style: none;
+				padding: 8px 0;
+				border-top:1px solid white ;
+			}
+			a{
+				text-decoration: none;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="imgbox">
+			<a href=""><img class="img1" src="img/2345_image_file_copy_1.jpg" /></a>
+			<ul class="text">
+
+				<li>
+					<a href="">楚乔传：宇文玥孤身救楚乔</a>
+				</li>
+				<li>
+					<a href="">
+						鬼吹灯之牧野诡事:王大陆告白
+					</a>
+				</li>
+				<li>
+					<a href="">
+						我的前半生:贺涵摊牌爱上子君
+					</a>
+				</li>
+				<li>
+					<a href="">
+						我们的少年时代:引爆青春梦想
+					</a>
+				</li>
+				<li>
+					<a href="">
+						极限挑战:黄宗泽小猪湿身巡演
+					</a>
+				</li>
+				<li>
+					<a href="">
+						中国有嘻哈:热狗公演霸气嗨唱
+					</a>
+				</li>
+				<li>
+					<a href="">
+						中国新歌声:E神大赞藏语Rap
+					</a>
+				</li>
+				<li>
+					<a href="">
+						虐心爱情故事:总裁娇妻宠到底
+					</a>
+				</li>
+				<li>
+					<a href="">
+						河神:津门天团集结水下探奇案
+					</a>
+				</li>
+				<li>
+					<a href="">
+						航海王：路飞VS千手克力架
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oImg=document.getElementsByClassName('img1');
+		var aLi=document.querySelectorAll('li');
+		var arrimg=['img/2345_image_file_copy_1.jpg','img/2345_image_file_copy_2.jpg',
+		'img/2345_image_file_copy_3.jpg','img/2345_image_file_copy_4.jpg',
+		'img/2345_image_file_copy_5.jpg','img/2345_image_file_copy_6.jpg',
+		'img/2345_image_file_copy_7.jpg','img/2345_image_file_copy_8.jpg',
+		'img/2345_image_file_copy_9.jpg','img/10.jpg'];
+		var len=arrimg.length;
+		var num=0;	
+		var timer=setInterval(function(){
+			if(num<len-1){
+				num++
+			}else{
+				num=0
+			}
+				oImg[0].src=arrimg[num]
+				can()
+		},2000)
+		for(var i=0; i<len; i++){
+			aLi[i].cont=i;
+			aLi[i].onclick=function(){
+					oImg[0].src=arrimg[this.cont]
+					num=this.cont
+						aLi[this.cont].style.background='orange'
+					
+			}
+		}
+		function can(){
+					for(var i=0; i<len;i++){
+						aLi[i].style.background='transparent'
+					}
+					aLi[num].style.background='orange';
+			}
+	</script>
+</html>

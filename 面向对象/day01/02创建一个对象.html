@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<p  id="段落" name="10" title=" "></p>
+		
+		<script>
+			//创建一个人的对象
+			var people = {
+				name : '小明',
+				age : 18,
+				married: false,
+				address:{
+					conuntry:'中国',
+					province:'重庆',
+					city:'江北区'
+				},
+				say:function(){
+					return  '真美丽！真好！';
+				}
+			};
+			
+			console.log(people);
+			console.log(people.name);
+			console.log(people.say());
+			console.log(people.name+people.say());
+			console.log(people.address);
+			console.log(people.address.province);
+			
+			var zhangsan = {};
+			zhangsan.name = '张三';
+			zhangsan.age = 12;
+			zhangsan.run = function(){
+				return '跑……';
+			}
+			
+			console.log(zhangsan);
+			
+			
+			
+
+
+
+		document.getElementById('段落').innerHTML = '12345678910';
+		var p =document.getElementById('段落');
+		p.setAttribute('name',zhangsan.name);//设置属性值
+		//p.attributes 获取属性值
+		
+		
+		//			小薇
+//			var people = {
+//				name : '小薇',
+//				age : 18,
+//				married: false,
+//				address:{
+//					conuntry:'中国',
+//					province:'重庆',
+//					city:'江北区'
+//				},
+//				say:function(){
+//					return  '真美丽！真好！';
+//				}
+//			};
+		</script>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str1 = 'this is a pig';
+			var str2 = 'hello world';
+			var str3 = '10000';
+			var str4 = '" "';
+			var str5 = '';
+			
+			//创建 字符串 对象 的方式
+			//new String(s);
+			//String(s);
+			
+			var s1 = new String();
+			var s2 = String();
+			console.log(s1);//String {length: 0, [[PrimitiveValue]]: ""}
+			console.log(s2);// 空
+			
+			
+			var s3 = new String('abc');
+			var s4 = String('abc');
+			console.log(s3);//String {0: "a", 1: "b", 2: "c", length: 3, [[PrimitiveValue]]: "abc"}
+			console.log(s4);// abc
+			
+			//
+			if(s3.constructor == String){
+				console.log('yes');
+			}
+			console.log(s3.length);
+			
+		</script>
+	</body>
+</html>

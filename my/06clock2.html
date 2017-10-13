@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.clock {
+				width: 600px;
+				height: 600px;
+				margin: 50px auto;
+				background: url(img/clock.jpg) no-repeat;
+				position: relative;
+			}
+			.clock div {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.h {
+				background: url(img/hour.png) no-repeat center center; 
+			}
+			.m {
+				background: url(img/minute.png) no-repeat center center; 
+			}
+			.s {
+				background: url(img/second.png) no-repeat center center; 
+				/*transform: rotate();*/
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="clock">
+			<div class="h"></div>
+			<div class="m"></div>
+			<div class="s"></div>
+		</div>
+		
+		<script type="text/javascript">
+			var hour  = document.getElementsByClassName('h')[0];
+			var min  = document.getElementsByClassName('m')[0];
+			var sec  = document.getElementsByClassName('s')[0];
+			
+			function time(){
+				var myDate = new Date();//最新的时间
+				var ms = myDate.getMilliseconds();//毫秒 现在的毫秒数
+				var s = myDate.getSeconds()+(ms/1000); //秒
+				var m = myDate.getMinutes()+(s/60);//分
+				var h = myDate.getHours()+(m/60);//时
+			
+				console.log(myDate);
+				console.log(h);
+				console.log(m);
+				console.log(s);
+			
+			
+				console.log(ms);
+			
+			
+				//一圈360° 一圈60秒 每秒6° 
+			
+				sec.style.webkitTransform = "rotate("+s*6+"deg)";
+				
+				min.style.webkitTransform = "rotate("+m*6+"deg)";
+				
+				hour.style.webkitTransform = "rotate("+h*30+"deg)";
+			}
+			
+			setInterval(time,100);
+		</script>
+	</body>
+</html>

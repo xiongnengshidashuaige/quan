@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a=1,b=2;
+			
+			function sum1(){
+				console.log('一：'+a+b);
+			}
+			sum1();
+			
+			
+			/*
+			function(){//没有名称的函数 叫匿名函数
+				console.log(a+b)
+			}
+			*/
+			
+			var sum2=function(){//没有名称的函数 叫匿名函数
+				console.log('二：'+a+b);
+			}
+			
+			sum2();
+			
+			//自调用函数
+			(function(){//没有名称的函数 叫匿名函数
+				console.log('三：'+a+b);
+			})();
+			/*
+			 函数表达式 可以“自调用”
+			 
+			 * 
+			 * */
+			
+			(function sum4(){
+				console.log('四：'+a+b);
+			})();
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

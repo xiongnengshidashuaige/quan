@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+	.left,
+    .right {
+        width: 300px;
+        height: 120px;
+    }
+    
+    .left div,
+    .right div {
+        width: 100px;
+        height: 90px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        border: 1px solid #ccc;
+        background: #bbffaa;
+    }
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//只克隆节点
+	    	//不克隆事件
+		    $(".aaron1").on('click', function() {
+		        $(".left").append( $(this).clone().css('color','red') )
+		    });
+		    
+		    //克隆节点
+	    	//克隆事件
+		    $(".aaron2").on('click', function() {
+	            console.log(1)
+		        $(".left").append( $(this).clone(true).css('color','blue') )
+		    });
+		});
+	</script>
+<!--
+//clone处理一
+$("div").clone()   //只克隆了结构，事件丢失
+
+//clone处理二
+$("div").clone(true) //结构、事件与数据都克隆
+-->
+</head>
+<body>
+	<h2>通过clone克隆元素</h2>
+    <div class="left">
+        <div class="aaron1">点击,clone浅拷贝</div>
+        <div class="aaron2">点击,clone深拷贝,可以继续触发创建</div>
+    </div>
+</body>
+</html>

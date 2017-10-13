@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.section {
+				width: 200px;
+				height: 50px;
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header" id="head" header="头部">
+			<h1>文档对象模型 DOM</h1>
+		</div>
+		<div class="container">
+			<div class="section1 section ">
+				<p>document</p>
+			</div>
+			<div class="section2 section ">
+				<p name='p3' >object</p>
+			</div>
+			<div class="srction3 section ">
+				<p name='p3'>model</p>
+			</div>
+		</div>
+	
+		<!--注释-->
+		
+		<script type="text/javascript">
+			var header = document.getElementsByClassName('header')[0];
+			var section = document.getElementsByClassName('section');
+			
+			console.log(section);
+			
+			section[0].onclick = function(){
+				console.log(1);
+			}
+			
+			var p = document.querySelector('.section p');
+			console.log(p);
+			
+			var p3 = document.getElementsByName('p3');
+			
+			console.log(p3);
+		
+			//
+			console.log(header.getAttribute('class'));
+			header.setAttribute('class','hh') 
+		</script>
+	</body>
+</html>
+<!--
+	DOM:（Document Object Model ）文档对象模型
+	D:document (文档)
+	O:object （对象）
+		用户自定义的对象:程序员自行创建的对象
+		内置对象：Array、Math、Date、String
+		宿主对象：由浏览器提供的对象，最基础的对象就是 window 对象。
+				Window对象对应着浏览器窗口本身，这个对象的属性和方法通常称之为 BOM （浏览器对象模型）
+				Window Object Model（窗口对象模型）
+	M:model （模型）
+	
+	DOMTree(DOM树)：
+		html(根标签)
+		
+	节点(node)：	
+		元素节点 （element node）
+			元素 包括：开始标签 + 元素内容 +结束标签 <p>元素内容：段落</p>
+			元素里面 再包含元素  就相当于 标签的嵌套   html标签的 外面不能再标签 因为它是文档的根标签（根元素）
+		文本节点：
+		属性节点：
+		注释节点：
+		
+	获取元素：
+		id:document.getElementById();单个，在同一个页面中，相同的id名 只能出现一次
+		class:document.getElementsByClassName();多个，
+		TagName:document.getElementsByTagName();多个，
+		
+		document.querySector();单个 // p  .p #p
+		document.querySectorAll();多个
+		
+		document.getElementsByName();
+		
+	//获取属性
+	getAttribute()
+	
+	// getAttribute() 方法 不属于 document对象，所以说 不能通过 document对象调用，只能通过 元素节点对象调用
+	obj.getAttribute(属性名称)，必须要有一个参数
+	
+	//设置属性
+	setAttribute()
+	obj.getAttribute(属性名称,设置的属性值)
+	
+	
+	
+-->

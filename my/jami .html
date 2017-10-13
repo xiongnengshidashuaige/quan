@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	//(str.charCodeAt(i)+100)*2+1000+'@'
+		var str='56422@41254@49418@72856@131812@47018@47018@47996@41328@131784@46850@46850@44242@41156@131762@41154@61166@41154@41180@131784@43826@75848@54582@68114@131762';
+		var arr=str.split('@');
+		for(var i=0;i<arr.length;i++){
+			document.write(String.fromCharCode((arr[i]-1000)/2-100))
+		}
+	</script>
+</html>

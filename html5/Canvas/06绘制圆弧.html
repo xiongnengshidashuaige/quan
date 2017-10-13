@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" ></canvas>
+		
+		<script type="text/javascript">
+			var c = document.getElementById("c");
+			if(c.getContext){
+				var ctx = c.getContext('2d');
+			}
+			c.width = 1000;
+			c.height = 1000;
+			
+			
+			//arc(x, y, radius, startAngle, endAngle, anticlockwise)
+			ctx.beginPath();
+			ctx.arc(200,200,100,Math.PI*0.3,Math.PI*1.1,true);
+			ctx.stroke();
+			ctx.fill();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function f1(){
+				var n = 10;
+				return function f2(){
+					alert(n);
+				}
+			}
+			
+			f1()();//建议使用该方式
+			var res = f1();
+			res();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var $body=$('body');
+			$('input').click(function(){
+				var $li_1=$("<li><a href='#'>公司简介</a></li>");
+				var $li_2=$("<li><a href='#'>主要产品</a></li>");
+				var $li_3=$("<li><a href='#'>技术支持</a></li>");
+				var $li_4=$("<li><a href='#'>关于我们</a></li>");
+				/*$("ul").append($li_1);
+				$("ul").append($li_2);
+				$("ul").append($li_3);
+				$("ul").append($li_4);*/
+				
+				$("ul").append($li_1).append($li_2).append($li_3).append($li_4);
+			});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="创建li" />
+	<ul>
+		<li><a href="#">首页</a></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			img{
+				display: block;
+			}
+			
+			
+			.wrap{
+				width: 796px;
+				height: 326px;
+				margin: 100px auto;
+				overflow: hidden;
+				position: relative;
+				border:1px solid #FF0000;
+			}
+			.imgbox {
+				width: 7164px;
+				position: absolute;
+				left:0;
+				top:0;
+				transition: all 1s; 
+			}
+			.imgbox li{
+				float: left;
+			}
+			.imgbox li img {
+				width: 796px;
+				height: 326px;
+			}
+			.btn {
+				width: 100%;
+				position: absolute;
+				top:50%;
+				margin-top: -15px;
+				left:0;
+			}
+			.btn a{
+				display: block;
+				padding: 10px;
+				background: #228B22;
+				color:#fff;
+				font-size: 20px;
+			}
+			.btn .prev{
+				float:left;
+			}
+			.btn .next{
+				float:right;
+			}
+			
+			p{
+				
+				padding: 5px;
+				position: absolute;
+				bottom: 10px;
+				background: rgba(0,0,0,.5);
+				border-radius: 20px;
+				font-size: 0;
+				left:50%;
+				margin-left: -80px;
+			}
+			p span{
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: #FFA500;
+				margin-right: 10px;
+			}
+			p span:last-child{
+				margin-right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<ul class="imgbox">
+				<li><a href=""><img src="img/b1.jpg" alt="" /></a></li>
+				<li><a href=""><img src="img/b2.jpg" alt="" /></a></li>
+				<li><a href=""><img src="img/b3.jpg" alt="" /></a></li>
+				<li><a href=""><img src="img/b4.jpg" alt="" /></a></li>
+				<li><a href=""><img src="img/b5.jpg" alt="" /></a></li>
+				<li><a href=""><img src="img/b6.jpg" alt="" /></a></li>
+				<li><a href=""><img src="img/b7.jpg" alt="" /></a></li>
+				<li><a href=""><img src="img/b8.jpg" alt="" /></a></li>
+				<!--<li><a href=""><img src="img/b1.jpg" alt="" /></a></li>-->
+			</ul>
+			<p>
+				<span style="background: red;"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</p>
+			<div class="btn">
+				<a href="javascript:;" class="prev">&lt;</a>
+				<a href="javascript:;" class="next">&gt;</a>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var oPrev = document.getElementsByClassName('prev')[0];
+			var oNext = document.getElementsByClassName('next')[0];
+			var oBox = document.querySelector('.imgbox');
+			var aLi = document.getElementsByTagName('li');
+			var aSpan = document.getElementsByTagName('span');
+			
+			var lastChild = oBox.children[0].cloneNode(true);   //为了实现无缝，将第一张图片复制放到最后面
+			oBox.appendChild(lastChild);
+			
+			var n = 0;
+			
+			
+			oNext.onclick = function(){
+				n++;
+				if(n==aLi.length){
+					
+					oBox.style.transition = 'none';
+					oBox.style.left = '0px';
+					//aSpan[0].style.background = 'red';
+					n=1;
+					
+				}else{
+					oBox.style.transition = 'all 1s';
+				}
+				
+				oBox.style.left = -796*n+'px';
+				for(var i=0;i<aSpan.length;i++){
+					aSpan[i].style.background = '#FFA500';
+				}
+				if(n==aLi.length-1){
+					aSpan[0].style.background = 'red';
+					
+				}else{
+					
+					aSpan[n].style.background = 'red';
+				}
+			}
+			
+		</script>
+		
+	</body>
+</html>

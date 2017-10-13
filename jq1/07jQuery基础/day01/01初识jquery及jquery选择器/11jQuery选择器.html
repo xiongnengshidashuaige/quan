@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+    <style>
+        li {
+            color: rgb(0,125,255);
+            font-size: 18px;
+        }
+    </style>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // # id选择器
+            // js dom.style.backgroundColor = "";
+            // 设置被选择元素的样式属性
+//           $("#b03").css("background","red");
+            // 获取被选择元素的样式属性
+//          var bg = $("#b03").css("color");
+//          console.log(bg);
+//
+//          var fz = $("#b03").css("font-size");
+//          console.log(fz);
+
+            // 类选择器
+//            $(".liItem").css("background","red");
+
+            // 标签选择器
+//            $("li").css("background","red");
+
+            // jQuery的一个 特点：隐式迭代
+
+            // * 通配符选择器
+//            $("*").css("font-size","20px");
+
+            // , 并集选择器/组合选择器/群组选择器
+//            $(".liItem,div").css("background","blue");
+
+//            $("#demo").css("background","red");
+
+			var n = 20;
+			$("#demo").click(function(){
+				//n+=5;
+				$(this).css({
+					'font-size':n++ + 'px',
+					'background':'rgb('+Math.round(255*Math.random())+',125,0)'
+				})
+			});
+//          $("#demo").css({
+//              "color":"red", 
+//              "font-size" : "20px",
+//              background: "blue"
+//          });
+			
+            // 交集选择器
+            $("li#b03").css("font-size","20px");
+
+        });
+    </script>
+</head>
+<body>
+	<ul>
+	    <li class="liItem aa" id="demo">兄弟很多1</li>
+	    <li>兄弟很多2</li>
+	    <li id="b03">兄弟很多3</li>
+	    <li>兄弟很多4</li>
+	    <li class="liItem">兄弟很多5</li>
+	    <li id="demo1">兄弟很多6</li>
+	    <li>兄弟很多7</li>
+	    <li class="liItem">兄弟很多8</li>
+	</ul>
+	
+	<div class="aa">
+	    我是div的内容
+	</div>
+</body>
+</html>
+<!--
+	json:
+	{"name":"val"}
+	{name:"val"}
+	
+	Math.random()//0-1
+	Math.round()
+-->

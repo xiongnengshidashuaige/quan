@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+	.left {
+        width: auto;
+        height: 120px;
+    }
+    .left div {
+        width: 150px;
+        height: 100px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        background: #bbffaa;
+        border: 1px solid #ccc;
+    }
+    a{
+        display: block;
+    }
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*子元素过滤选择器：
+		 $(":first-child") 选择所有父级元素下的第一个子元素
+		 $(":last-child") 选择所有父级元素下的最后一个子元素
+		 $(":only-child") 如果某个元素是其父元素的唯一子元素，那么它就会被选中
+		 $(":nth-child") 选择的他们所有父元素的第n个子元素
+		 $(":nth-last-child") 选择所有他们父元素的第n个子元素。计数从最后一个元素开始到第一个
+		 
+		 * 
+ 注意事项：
+1.	:first只匹配一个单独的元素，但是:first-child选择器可以匹配多个：即为每个父级元素匹配第一个子元素。这相当于:nth-child(1)
+2.	:last 只匹配一个单独的元素， :last-child 选择器可以匹配多个元素：即，为每个父级元素匹配最后一个子元素
+3.	如果子元素只有一个的话，:first-child与:last-child是同一个
+4.	:only-child匹配某个元素是父元素中唯一的子元素，就是说当前子元素是父元素中唯一的元素，则匹配
+5.	jQuery实现:nth-child(n)是严格来自CSS规范，所以n值是“索引”，也就是说，从1开始计数，:nth-child(index)从1开始的，而eq(index)是从0开始的
+6.	nth-child(n) 与 :nth-last-child(n) 的区别前者是从前往后计算，后者从后往前计算
+		 * */
+	</script>
+</head>
+<body>
+	<h2>子元素筛选选择器</h2>
+    <h3>:first-child、:last-child、:only-child</h3>
+    <div class="left first-div">
+        <div class="div">
+            <a>:first-child</a>
+            <a>第二个元素</a>
+            <a>:last-child</a>
+        </div>
+        <div class="div">
+            <a>:first-child</a>
+        </div>
+        <div class="div">
+            <a>:first-child</a>
+            <a>第二个元素</a>
+            <a>:last-child</a>
+        </div>
+    </div>
+    
+    <h3>:nth-child、:nth-last-child</h3>
+    <div class="left last-div">
+        <div class="div">
+            <a>:first-child</a>
+            <a>第二个元素</a>
+            <a>第三个元素</a>
+            <a>:last-child</a>
+        </div>
+        <div class="div">
+            <a>:first-child</a>
+            <a>第二个元素</a>
+        </div>
+        <div class="div">
+            <a>:first-child</a>
+            <a>第二个元素</a>
+            <a>第三个元素</a>
+            <a>:last-child</a>
+        </div>
+    </div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//查找class="first-div"下的第一个a元素
+	        //针对所有父级下的第一个
+	        $('.first-div a:first-child').css("color", "#CD00CD");
+	        
+	        //查找class="first-div"下的最后一个a元素
+	        //针对所有父级下的最后一个
+	        //如果只有一个元素的话，last也是第一个元素
+	        $('.first-div a:last-child').css("color", "red");
+	        
+	        //查找class="first-div"下的只有一个子元素的a元素
+       		$('.first-div a:only-child').css("color", "blue");
+       		
+       		//查找class="last-div"下的第二个a元素
+        	$('.last-div a:nth-child(2)').css("color", "#CD00CD");
+        	
+        	//查找class="last-div"下的倒数第二个a元素
+        	$('.last-div a:nth-last-child(2)').css("color", "red");
+        	
+		});
+	</script>
+</body>
+</html>

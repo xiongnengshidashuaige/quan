@@ -1,0 +1,149 @@
+# 学生管理系统
+
+## 页面结构分析
+
+### 前台 （不需要登录，所有人都可以看）
+	index.html
+	detail.html
+	photowall.html
+	
+### 后台 s（必须要登录 之后才能访问）
+	admin.html
+	add.html
+	edit.html
+	
+
+## 知识点：
+	Bootstrap:http://v3.bootcss.com/css/ 
+	日期时间选择器:http://www.bootcss.com/p/bootstrap-datetimepicker/
+	
+/* -------------------------------------------- */
+# 正式开发 php面向过程的开发 
+目录结构 
+v2(student)
+	- static 静态资源 js/css/img/
+	- func 函数库
+		- db.php 连接数据库
+		- page.php 分页
+		- verfiy.php 验证码
+	- database 数据库
+	- upload 上传文件夹
+	- admin 后台
+		- index.php
+		- edit.php
+		- add.php
+	- index.php 前台入口文件（前台首页）
+	- detail.php 学生详情页
+	- photowall.php 照片墙页面
+
+功能分析
+	前台：
+		首页：搜索、列表展示、分页
+		详情页：数据展示
+		照片墙：数据展示
+	后台：
+		搜索
+		查看
+		添加
+		删除
+		编辑
+		上传
+		
+		登录
+		验证码
+		分页
+		
+数据库设计
+数据库 student
+ -表 admin 管理员表
+ -表 stu 学员表
+ -表 class 班级
+ -表 photo 图片表
+ 
+# 数据库 student
+
+# 新建数据库 student 并设置默认字符集 为 utf8
+CREATE DATABASE  IF NOT EXISTS student DEFAULT CHARACTER SET UTF8 ;
+# CREATE DATABASE student;
+# 打开数据库
+USE student;
+
+# 创建表
+# 新建 管理员表 admin
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT ,
+  `name` varchar(10) NOT NULL COMMENT '管理员账号',
+  `pass` varchar(32) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='管理员表';
+
+# 插入一条默认数据  账号 admin  密码为 123456 
+INSERT INTO `admin` (`name`, `pass`) VALUE
+('admin', 'e10adc3949ba59abbe56e057f20f883e');
+
+# 查看表数据
+SELECT * FROM admin;
+
+# 新建 班级表 class
+CREATE TABLE `class` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT ,
+  `class_name` varchar(10) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='班级表';
+
+# 插入4条数据
+INSERT INTO `class` (`class_name`) VALUES
+('前端开发'),
+('PHP开发'),
+('UI设计'),
+('Node.js开发');
+
+# 查看表数据
+SELECT * FROM class;
+
+# 新建 学员表 stu
+CREATE TABLE `stu` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT ,
+  `stu_num` varchar(10) NOT NULL,
+  `name` varchar(10) NOT NULL,
+  `pid`  int(11) NOT NULL,                                                                                                         
+  `sex`  ENUM('男','女')  NOT NULL DEFAULT '男' ,  
+  `cid` int(11) NOT NULL,
+  `birthday`  varchar(255) NOT NULL DEFAULT '2017-09-10',
+  `qq`	 varchar(12) NOT NULL,
+  `phone`	 varchar(11) NOT NULL,
+  `homepage`  varchar(32) NOT NULL,
+  `hobby`  varchar(255) NOT NULL ,
+  `info` text NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='学员表';
+
+# 插入一条数据
+INSERT INTO `stu` 
+(`stu_num`, `name`, `pid`, `sex`, `cid`, `birthday`, `qq`, `phone`, `homepage`, `hobby`, `info`) 
+VALUES 
+('20170609', '张三', '1', '男', '2', '2017-09-10', '123456789', '12345678910', 'www.baidu.com', '敲代码,王者荣耀', '我是张三丰,张三他爹');
+
+# 查询表数据
+SELECT * FROM stu;
+SELECT * FROM stu \G;
+ 
+# 多表查询 
+SELECT a.id,a.stu_num,a.sex,a.name, b.class_name FROM stu a  INNER JOIN  class  b ON a.cid = b.id ;
+
+
+# 新建 相册表 photo
+CREATE TABLE `student` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT ,
+  `sid` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='相册表';
+
+
+
+数据库 字段 类型
+http://www.runoob.com/mysql/mysql-data-types.html
+
+/*--------------------------------------------------------------*/
+功能实现
+

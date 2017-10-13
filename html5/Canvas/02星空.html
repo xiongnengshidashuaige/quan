@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#star {
+				background: linear-gradient(#00111e 30%,#033d5e);
+				background: -webkit-linear-gradient(#00111e 30%,#033d5e);
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="star">
+			<p>你的浏览器不支持canvas</p>
+		</canvas>
+		
+		<script type="text/javascript">
+			//获取元素
+			var c = document.getElementById('star');
+			//创建context对象
+			var ctx = c.getContext('2d');
+			
+			var xMax = c.width = window.screen.availWidth;//获取浏览器等的屏幕的可用宽度
+			var yMax = c.height = window.screen.availHeight;//获取浏览器等的屏幕的可用高度  
+			
+			var starNum = Math.round(xMax+yMax);//四舍五入  //星星的数量
+			for(var i=0;i<=starNum;i++){
+				var randomX = Math.floor((Math.random()*xMax)+1);//绘制矩形的X坐标  1-xMax 随机数
+				var randomY = Math.floor((Math.random()*yMax)+1);//绘制矩形的Y坐标  1-yMax 随机数 
+				
+				var randomSize = Math.floor((Math.random()*2)+1); //星星的大小 （1-2）
+				var randomOpac = Math.floor((Math.random()*9)+1); //随机1-9透明度值
+				var randomCol = Math.floor((Math.random()*255)+1); //随机1-360颜色值
+				
+				if( randomSize > 1){
+					ctx.shadowBlur = Math.floor((Math.random()*15)+5);//阴影 5-15
+					ctx.shadowColor = '#fff'; //阴影颜色 白色
+				}
+				ctx.fillStyle ="hsla("+randomCol+",30%,80%,."+randomOpac+randomOpac+")";
+				ctx.fillRect(randomX,randomY,randomSize,randomSize)
+			}
+		</script>
+	</body>
+</html>

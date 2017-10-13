@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.out {
+				width: 300px;
+				height: 300px;
+				border:2px solid red;
+				position: relative;
+			}
+			
+			.block {
+				width: 50px;
+				height: 50px;
+				background: green;
+				position: absolute;
+				left:0;
+				top:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="out">
+			<div class="block" ></div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			var block = document.querySelector('.block');
+			
+			document.onkeydown = function(ev){
+				var ev = ev || event;
+				//上38 右39 下40 左37
+				console.log(ev.keyCode);
+				
+				switch(ev.keyCode){
+					case 38:
+						block.style.top = block.offsetTop+10+'px';
+						break;
+					case 39:
+						block.style.left = block.offsetLeft+10+'px';
+						break;
+					case 40:
+						block.style.top = block.offsetTop-10+'px';
+						break;
+					case 37:
+						block.style.left = block.offsetLeft-10+'px';
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>
+<!--
+	canvas
+	
+-->

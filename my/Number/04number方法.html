@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var n1 = new Number(10);
+			console.log(typeof n1);//object number
+			
+			
+			var str = n1.toString();
+			console.log(str);
+			console.log(typeof str); //string
+			
+			var n2 = 3.1415926;
+			var str2 = n2.toFixed(2);
+			console.log(str2);			//3.14
+			console.log(typeof str2);   //string
+			
+			var n3 = new Number(100);
+			console.log(n3);
+			console.log(n3.valueOf());
+			
+			//了解
+			var num = new Number(100500);
+			document.write (num.toExponential(1))
+		</script>
+	</body>
+</html>
+<!--
+toString	把数字转换为字符串，使用指定的基数。 （重点）
+toLocaleString	把数字转换为字符串，使用本地数字格式顺序。
+toFixed	把数字转换为字符串，结果的小数点后有指定位数的数字。（重点）
+toExponential	把对象的值转换为指数计数法。
+toPrecision	把数字格式化为指定的长度。
+valueOf	返回一个 Number 对象的基本数字值。（重点）
+	
+-->
+<!--
+基本的数据类型:number string boolean object undefined 
+undefined - 如果变量是 Undefined 类型的
+boolean - 如果变量是 Boolean 类型的
+number - 如果变量是 Number 类型的
+string - 如果变量是 String 类型的
+object - 如果变量是一种引用类型或 Null 类型的
+-->

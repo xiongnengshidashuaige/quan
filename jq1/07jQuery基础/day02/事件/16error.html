@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../lib/jquery-1.12.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("img").error(function(){
+					
+				  $(this).hide();
+				  document.write("图片有误");
+				
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<img src="../../../01HTML/contact-bg.jpg1" alt="123" title="img" width="300"/>
+	</body>
+</html>

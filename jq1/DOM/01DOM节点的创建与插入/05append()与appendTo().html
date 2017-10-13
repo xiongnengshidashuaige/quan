@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+		.content {
+        width: 300px;
+	    }
+	    .append{
+	        background-color: blue;
+	    }
+	    .appendTo{
+	        background-color: red;
+	    }
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#btn1').click(function(){
+				//.append(), 内容在方法的后面，
+	    		//参数是将要插入的内容。
+	    		$(".content").append('<div class="append">通过append方法添加的元素</div>');
+			});
+			$('#btn2').click(function(){
+				//.appendTo()刚好相反，内容在方法前面，
+	    		//无论是一个选择器表达式 或创建作为标记上的标记
+	    		//它都将被插入到目标容器的末尾。
+	    		$('<div class="appendTo">通过appendTo方法添加的元素</div>').appendTo($(".content"))
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>通过append与appendTo添加元素</h2>
+	<input type="button" value="点击通过jQuery的append添加元素" id="btn1" />
+    <input type="button" value="点击通过jQuery的appendTo添加元素" id="btn2"/>
+
+    <div class="content"></div>
+</body>
+</html>

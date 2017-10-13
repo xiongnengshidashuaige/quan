@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.list{
+				border:1px solid #FF0000;
+				font-size: 50px;
+			}
+			span{
+				color:#228B22;
+			}
+			.e{
+				color:#FF4500;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<p class="list">
+			<span class="s">1</span>
+			<em class="e">a</em>
+			<i class="i">A</i>
+		</p>-->
+		<button>按钮</button>
+		<script type="text/javascript">
+			//获取元素
+			var oBtn = document.querySelector('button');
+			var str = '';
+			
+			//事件
+			oBtn.onclick = function(){
+				for(var i=0;i<5;i++){
+					str += '<p class="list"><span class="s s'+i+'">'+i+'</span><em class="e">a</em><i class="i">A</i></p>';
+//					console.log(str);
+				}
+				
+				document.body.innerHTML = str;
+			}
+			
+		</script>
+	</body>
+</html>
+<!--
+	变量 不能加引号
+	
+	document.write（）
+-->

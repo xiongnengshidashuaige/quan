@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+	.left {
+        width: auto;
+        height: 120px;
+    }
+    
+    .left div {
+        width: 100px;
+        height: 70px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        background: #bbffaa;
+        border: 1px solid #ccc;
+    }
+    
+    .bottom {
+        width: 800px;
+    }
+    
+    .bottom div,
+    .bottom span {
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 5px;
+        background: #bbffaa;
+        float: left;
+        font-size: 14px;
+    }
+    
+    .bottom .small {
+        width: 60px;
+        height: 25px;
+        font-size: 12px;
+        background: #fab;
+    }
+	</style>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	/*可见性过滤选择器
+		:hidden //选取所有不可见(隐藏)的元素
+		:visible//选取所有可见(显示)的元素
+		
+	注意：在可见性过滤选择器中，需要注意选择器：hidden，它不包括样式属性display为none的元素
+		但包括文本隐藏域<input type="hidden"/>和<div style="visibility:hidden;">
+		* */
+		
+/*我们有几种方式可以隐藏一个元素：
+1.CSS display的值是none。
+2.type="hidden"的表单元素。
+3.宽度和高度都显式设置为0。
+4.一个祖先元素是隐藏的，该元素是不会在页面上显示
+5.CSS visibility的值是hidden
+6.CSS opacity的指是0
+
+如果元素中占据文档中一定的空间,元素被认为是可见的。
+可见元素的宽度或高度，是大于零。
+元素的visibility: hidden 或 opacity: 0被认为是可见的，因为他们仍然占用空间布局。
+不在文档中的元素是被认为是不可见的，如果当他们被插入到文档中，jQuery没有办法知道他们是否是可见的，因为元素可见性依赖于适用的样式*/
+	
+	
+	</script>
+</head>
+<body>
+	<h2>可见性筛选选择器</h2>
+    <h3>:visible/:hidden</h3>
+    <div class="left">
+        <div class="div">
+            <a>display</a>
+            <p id="div1" style="display:none;">display</p>
+        </div>
+        <div class="div">
+            <a>width</a>
+            <a>height</a>
+            <p id="div2" style="width:0;height:0">width/height</p>
+        </div>
+        <div class="div">
+            <a>visibility</a>
+            <a>opacity</a>
+            <p id="div3" style="visibility:hidden;opacity:0">visibility</p>
+        </div>
+         <div class="div">
+            <a>visibility</a>
+            <a>opacity</a>
+            <p id="div4" style="visibility:hidden;">visibility</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+    		//查找id = div1的DOM元素,是否可见
+    		console.log($('#div1:hidden').html())
+    		//查找id = div2的DOM元素,是否可见
+    		console.log($('#div2:hidden').html())
+    		//查找id = div3的DOM元素,是否可见
+    		console.log($('#div3:visible').html())
+    		//查找id = div1的DOM元素,是否隐藏
+    		
+    		//查找id = div2的DOM元素,是否隐藏
+    		//查找id = div3的DOM元素,是否隐藏
+    		
+    		console.log($('p:hidden'))
+    		console.log($('p:visible'))
+    </script>
+</body>
+</html>
